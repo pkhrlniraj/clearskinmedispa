@@ -103,6 +103,16 @@ const site = {
     light: "https://clearskinmedispa.com/New/wp-content/uploads/2026/03/clear-skin-logo-transparent.png",
     dark: "https://clearskinmedispa.com/New/wp-content/uploads/2026/03/clear-skin-logo-transparent.png"
   },
+  images: {
+    aboutHero:
+      "https://clearskinmedispa.com/New/wp-content/uploads/2024/02/7G0A5211-scaled.jpg",
+    aboutAccent:
+      "https://clearskinmedispa.com/New/wp-content/uploads/2024/02/EG-2.png",
+    clinicTeam:
+      "https://clearskinmedispa.com/New/wp-content/uploads/2024/02/7G0A5611-scaled.jpg",
+    foundersAward:
+      "https://clearskinmedispa.com/New/wp-content/uploads/2024/02/Patrick-Brown-with-Ama-Soprano-Ice-Lase-Treatment-Machine-scaled.jpg"
+  },
   ogImage:
     "https://clearskinmedispa.com/New/wp-content/uploads/2023/11/Soprano-Ice-Cover-Photo-scaled.jpg",
   homepage: {

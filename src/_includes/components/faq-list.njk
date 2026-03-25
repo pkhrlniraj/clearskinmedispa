@@ -7,12 +7,14 @@
       <p class="section-subtitle">{{ faqIntro or "Need a quick answer before you book? Start here." }}</p>
     </div>
 
-    <div class="faq-list" role="list">
+    <div class="faq-list{% if faqExpanded %} faq-list--static{% endif %}" role="list">
       {% for item in faqs %}
-      <div class="faq-item" role="listitem">
-        <button class="faq-question" aria-expanded="false" aria-controls="faq-a{{ loop.index }}">
+      <div class="faq-item{% if faqExpanded %} active faq-item--static{% endif %}" role="listitem">
+        <button class="faq-question" type="button" aria-expanded="{% if faqExpanded %}true{% else %}false{% endif %}" aria-controls="faq-a{{ loop.index }}"{% if faqExpanded %} disabled aria-disabled="true"{% endif %}>
           <span class="faq-question-text">{{ item.question }}</span>
+          {% if not faqExpanded %}
           <span class="faq-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+          {% endif %}
         </button>
         <div class="faq-answer" id="faq-a{{ loop.index }}" role="region">
           <div class="faq-answer-inner">{{ item.answer }}</div>

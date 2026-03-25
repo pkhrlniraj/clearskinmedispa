@@ -25,7 +25,7 @@
 
       <div class="hero-side-stack">
         <div class="page-image-frame">
-          <img src="{{ site.ogImage }}" alt="Clear Skin Medi Spa exterior and treatment imagery">
+          <img src="{{ site.images.clinicTeam }}" alt="Clear Skin Medi Spa team and treatment space">
           <span class="page-image-caption"><i class="fa-solid fa-car-side"></i>Easy access from {{ localPage.areaName }}</span>
         </div>
         <div class="hero-side-card">
@@ -40,8 +40,6 @@
       </div>
     </div>
   </section>
-
-  {% include "components/trust-bar.njk" %}
 
   <section class="page-section">
     <div class="container section-grid">
@@ -70,7 +68,7 @@
         <h2 class="section-title">Directions from {{ localPage.areaName }}</h2>
         <p class="section-subtitle">Simple travel routes, easy parking, and online booking make repeat visits much easier.</p>
       </div>
-      <div class="feature-grid">
+      <div class="feature-grid feature-grid--three">
         {% for item in localPage.directions %}
         <div class="feature-card">
           <i class="fa-solid fa-route"></i>
@@ -86,10 +84,9 @@
   {% set serviceSectionLabel = "Popular Near " ~ localPage.areaName %}
   {% set serviceSectionTitle = "Frequently booked treatments for " ~ localPage.areaName ~ " clients" %}
   {% set serviceSectionIntro = "These services are common starting points for local clients looking for better skin, more confidence, or longer-term maintenance." %}
+  {% set serviceGridClass = "services-grid--local" %}
   {% set highlightFirstCard = "Top Pick" %}
   {% include "components/service-grid.njk" %}
-
-  {% include "components/reviews-strip.njk" %}
 
   {% set faqs = localPage.faq %}
   {% set faqLabel = "Local Questions" %}

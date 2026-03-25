@@ -7,7 +7,7 @@
       <p class="section-subtitle">{{ serviceSectionIntro or "Choose a treatment that matches your goals, then book online in minutes." }}</p>
     </div>
 
-    <div class="services-grid">
+    <div class="services-grid{% if serviceGridClass %} {{ serviceGridClass }}{% endif %}">
       {% for service in gridCards %}
       <article class="service-card">
         <div class="service-card-img-wrap">

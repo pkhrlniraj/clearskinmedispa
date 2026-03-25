@@ -49,8 +49,6 @@
     </div>
   </section>
 
-  {% include "components/trust-bar.njk" %}
-
   <section class="page-section">
     <div class="container section-grid">
       <div class="section-copy">
@@ -95,31 +93,11 @@
     </div>
   </section>
 
-  <section class="page-section">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">What Your Visit Looks Like</span>
-        <h2 class="section-title">A straightforward, consultation-led process</h2>
-        <p class="section-subtitle">We keep treatment plans clear, realistic, and focused on visible results instead of guesswork.</p>
-      </div>
-      <div class="process-grid">
-        {% for step in service.process %}
-        <div class="process-card">
-          <i class="fa-solid fa-sparkles"></i>
-          <h3>{{ step.title }}</h3>
-          <p>{{ step.text }}</p>
-        </div>
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-
-  {% include "components/reviews-strip.njk" %}
-
   {% set cards = relatedCards %}
   {% set serviceSectionLabel = "Related Services" %}
   {% set serviceSectionTitle = "Treatments that pair well with " ~ service.name %}
   {% set serviceSectionIntro = "Many clients combine complementary treatments to improve results, comfort, or maintenance." %}
+  {% set serviceGridClass = "services-grid--related" %}
   {% set highlightFirstCard = "" %}
   {% include "components/service-grid.njk" %}
 
@@ -127,6 +105,7 @@
   {% set faqLabel = "Service FAQs" %}
   {% set faqTitle = service.name ~ " FAQs" %}
   {% set faqIntro = "Get quick answers before you book your next appointment." %}
+  {% set faqExpanded = true %}
   {% include "components/faq-list.njk" %}
 
   {% set ctaTitle = service.cta.title %}
