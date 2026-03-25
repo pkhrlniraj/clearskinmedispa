@@ -8,19 +8,19 @@ body {
 }
 
 .nav-logo img {
-  height: 58px;
+  height: 66px;
   width: auto;
-  max-width: 300px;
+  max-width: 340px;
   max-height: none;
-  filter: brightness(0.72) saturate(1.08) contrast(1.04) drop-shadow(0 0.5px 0 rgba(102, 73, 21, 0.32));
+  filter: none;
 }
 
 .footer-brand img {
-  height: 56px;
+  height: 78px;
   width: auto;
-  max-width: 280px;
+  max-width: 360px;
   max-height: none;
-  filter: brightness(1.04) saturate(1.04);
+  filter: none;
   opacity: 1;
 }
 
@@ -786,8 +786,8 @@ body {
   }
 
   .nav-logo img {
-    height: 50px;
-    max-width: 240px;
+    height: 58px;
+    max-width: 280px;
   }
 
   .page-hero {
@@ -853,8 +853,8 @@ body {
   }
 
   .footer-brand img {
-    height: 50px;
-    max-width: 240px;
+    height: 72px;
+    max-width: 320px;
     margin-left: auto;
     margin-right: auto;
   }
