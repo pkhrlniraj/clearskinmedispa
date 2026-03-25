@@ -1,5 +1,6 @@
 node_modules/
 dist/
+_site/
 .DS_Store
 Website audit.zip
 clear-skin-homepage-context.md
