@@ -421,40 +421,31 @@
       gap: 14px;
       margin-bottom: 0;
     }
+    .hero-assurance {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-top: 28px;
+    }
+    .hero-assurance-value {
+      font-family: var(--font-head);
+      font-size: clamp(34px, 3vw, 44px);
+      font-weight: 700;
+      line-height: 1;
+      color: var(--gold-light);
+    }
+    .hero-assurance-label {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.76);
+    }
     #hero .btn-outline {
       background: rgba(255,255,255,0.06);
       backdrop-filter: blur(6px);
     }
     #hero .btn-outline:hover {
       background: rgba(255,255,255,0.16);
-    }
-    .hero-metrics {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 16px;
-      margin-top: 22px;
-    }
-    .hero-metric {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      padding: 22px 24px;
-      border-radius: 22px;
-      background: rgba(255,255,255,0.95);
-      border: 1px solid rgba(200,150,62,0.16);
-      box-shadow: var(--shadow-sm);
-    }
-    .hero-metric-value {
-      font-family: var(--font-head);
-      font-size: clamp(28px, 3vw, 36px);
-      font-weight: 700;
-      color: var(--dark);
-    }
-    .hero-metric-label {
-      font-size: 12px;
-      color: var(--text-light);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
     }
 
     /* ========================================
@@ -550,6 +541,15 @@
         color: var(--text);
         max-width: none;
       }
+      .hero-assurance {
+        margin-top: 24px;
+      }
+      .hero-assurance-value {
+        color: var(--gold-dark);
+      }
+      .hero-assurance-label {
+        color: var(--text-light);
+      }
       #hero .btn-outline {
         color: var(--gold-dark);
         border-color: rgba(200,150,62,0.5);
@@ -559,13 +559,6 @@
       #hero .btn-outline:hover {
         background: var(--gold-pale);
         border-color: var(--gold);
-      }
-      .hero-metrics {
-        grid-template-columns: 1fr;
-      }
-      .hero-metric {
-        align-items: center;
-        text-align: center;
       }
       .trust-item {
         min-width: 150px;
@@ -1760,23 +1753,11 @@
               Explore Services <i class="fa-solid fa-arrow-down"></i>
             </a>
           </div>
+          <div class="hero-assurance" aria-label="Inclusive treatment note">
+            <span class="hero-assurance-value">All</span>
+            <span class="hero-assurance-label">Skin Tones Welcome</span>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="hero-metrics" aria-label="Quick facts">
-      <div class="hero-metric">
-        <span class="hero-metric-value">4.9</span>
-        <span class="hero-metric-label">Google Rating</span>
-      </div>
-      <div class="hero-metric">
-        <span class="hero-metric-value">11+</span>
-        <span class="hero-metric-label">Treatments Offered</span>
-      </div>
-      <div class="hero-metric">
-        <span class="hero-metric-value">All</span>
-        <span class="hero-metric-label">Skin Tones Welcome</span>
       </div>
     </div>
   </div>
