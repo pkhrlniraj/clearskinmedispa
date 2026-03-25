@@ -2,6 +2,8 @@ node_modules/
 dist/
 _site/
 .DS_Store
+__pycache__/
+*.pyc
 Website audit.zip
 clear-skin-homepage-context.md
 clear-skin-logo-new.jpg
