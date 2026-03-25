@@ -720,6 +720,15 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .page-service .page-hero-grid,
+  .page-about .page-hero-grid,
+  .page-neighbourhood .page-hero-grid,
+  .page-contact .page-hero-grid,
+  .page-privacy .page-hero-grid,
+  .page-blog .page-hero-grid--compact {
+    grid-template-columns: 1fr;
+  }
+
   .feature-grid--three,
   .process-grid,
   .contact-grid,
@@ -737,6 +746,15 @@ body {
 
   .page-image-frame img {
     min-height: 360px;
+  }
+
+  .page-service .page-image-frame img,
+  .page-about .page-hero .page-image-frame img,
+  .page-neighbourhood .page-image-frame img,
+  .page-contact .page-image-frame img,
+  .about-award-frame img {
+    min-height: 320px;
+    max-height: 420px;
   }
 }
 
@@ -771,6 +789,22 @@ body {
 
   .page-image-frame img {
     min-height: 280px;
+  }
+
+  .page-service .page-image-frame img,
+  .page-about .page-hero .page-image-frame img,
+  .page-neighbourhood .page-image-frame img,
+  .page-contact .page-image-frame img,
+  .about-award-frame img {
+    min-height: 240px;
+    max-height: 340px;
+  }
+
+  .page-service .hero-side-stack,
+  .page-neighbourhood .hero-side-stack,
+  .page-contact .hero-side-stack,
+  .page-about .hero-side-stack {
+    gap: 14px;
   }
 
   .about-stat-row {
