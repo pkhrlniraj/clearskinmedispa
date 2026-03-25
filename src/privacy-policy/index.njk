@@ -2,12 +2,22 @@
   {% include "components/breadcrumbs.njk" %}
 
   <section class="page-hero">
-    <div class="container">
-      <span class="page-badge"><i class="fa-solid fa-shield-halved"></i>Privacy & Data Use</span>
-      <h1 class="page-hero-title">Privacy policy</h1>
-      <p class="page-hero-summary">
-        This page explains what information may be collected when you interact with Clear Skin Medi Spa online, how that information is used, and which third-party tools are involved in booking and analytics.
-      </p>
+    <div class="container page-hero-grid page-hero-grid--compact">
+      <div class="page-hero-copy">
+        <span class="page-badge"><i class="fa-solid fa-shield-halved"></i>Privacy & Data Use</span>
+        <h1 class="page-hero-title">Privacy policy</h1>
+        <p class="page-hero-summary">
+          This page explains what information may be collected when you interact with Clear Skin Medi Spa online, how that information is used, and which third-party tools are involved in booking and analytics.
+        </p>
+      </div>
+      <div class="hero-side-card policy-side-card">
+        <h3>Need help instead?</h3>
+        <ul class="stack-list" role="list">
+          <li><i class="fa-solid fa-phone"></i><a href="{{ site.phoneHref }}">{{ site.phoneDisplay }}</a></li>
+          <li><i class="fa-solid fa-envelope"></i><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li><i class="fa-regular fa-calendar"></i><a href="{{ site.bookingUrl }}" target="_blank" rel="noopener">Booking requests are handled through Fresha</a></li>
+        </ul>
+      </div>
     </div>
   </section>
 

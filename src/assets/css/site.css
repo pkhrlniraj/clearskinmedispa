@@ -36,6 +36,35 @@ body {
     linear-gradient(180deg, #fff 0%, var(--bg-cream) 100%);
 }
 
+.page-service .page-hero {
+  background:
+    radial-gradient(circle at top right, rgba(200,150,62,0.22), transparent 34%),
+    radial-gradient(circle at bottom left, rgba(213,181,130,0.12), transparent 30%),
+    linear-gradient(180deg, #fff 0%, var(--bg-cream) 100%);
+}
+
+.page-about .page-hero {
+  background:
+    radial-gradient(circle at top left, rgba(200,150,62,0.18), transparent 32%),
+    linear-gradient(135deg, rgba(255,255,255,0.95), rgba(249,245,239,0.96)),
+    var(--bg-cream);
+}
+
+.page-neighbourhood .page-hero {
+  background:
+    radial-gradient(circle at top right, rgba(200,150,62,0.16), transparent 34%),
+    radial-gradient(circle at bottom left, rgba(200,150,62,0.08), transparent 26%),
+    linear-gradient(180deg, #fff 0%, var(--bg-cream) 100%);
+}
+
+.page-contact .page-hero,
+.page-privacy .page-hero,
+.page-blog .blog-hero {
+  background:
+    radial-gradient(circle at top right, rgba(200,150,62,0.16), transparent 35%),
+    linear-gradient(180deg, #fff 0%, var(--bg-cream) 100%);
+}
+
 .page-hero-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -46,6 +75,10 @@ body {
 .hero-side-stack {
   display: grid;
   gap: 18px;
+}
+
+.page-hero-grid--compact {
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.72fr);
 }
 
 .page-badge {
@@ -478,7 +511,7 @@ body {
   top: 108px;
 }
 
-.page-about .page-image-frame img {
+.page-about .page-hero .page-image-frame img {
   min-height: 500px;
   max-height: 620px;
 }
@@ -487,6 +520,11 @@ body {
 .page-contact .page-image-frame img {
   min-height: 360px;
   max-height: 460px;
+}
+
+.about-award-frame img {
+  min-height: 280px;
+  max-height: 360px;
 }
 
 .policy-card,
@@ -507,6 +545,12 @@ body {
 
 .contact-grid {
   margin-top: 34px;
+}
+
+.contact-card--primary {
+  background:
+    linear-gradient(180deg, rgba(200,150,62,0.14), rgba(255,255,255,0.98));
+  border-color: rgba(200,150,62,0.28);
 }
 
 .contact-card i {
@@ -582,8 +626,95 @@ body {
   color: var(--gold);
 }
 
+.pill-link--static {
+  cursor: default;
+}
+
+.blog-pill-grid {
+  margin-top: 28px;
+}
+
+.blog-outline-card {
+  align-self: start;
+}
+
+.policy-side-card,
+.blog-outline-card,
+.page-contact .hero-side-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.policy-side-card::before,
+.blog-outline-card::before,
+.page-contact .hero-side-card::before,
+.page-service .hero-side-card::before,
+.page-about .hero-side-card::before,
+.page-neighbourhood .hero-side-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), rgba(200,150,62,0.15));
+}
+
+.page-service .hero-highlights,
+.page-neighbourhood .hero-highlights,
+.page-contact .hero-highlights,
+.page-about .hero-highlights {
+  max-width: 620px;
+}
+
+.page-service .info-panel,
+.page-service .hero-side-card {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.98), rgba(248,244,238,0.92));
+}
+
+.page-service .mini-stats {
+  gap: 14px;
+  margin-top: 0;
+}
+
+.page-service .mini-stat {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border: 1px solid rgba(200,150,62,0.14);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.9);
+}
+
+.page-service .mini-stat span {
+  line-height: 1.7;
+  color: var(--text);
+}
+
+.page-neighbourhood .feature-card,
+.page-blog .feature-card,
+.page-about .feature-card {
+  height: 100%;
+}
+
+.page-neighbourhood .feature-card,
+.page-blog .blog-topic-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.page-neighbourhood .feature-card::after,
+.page-blog .blog-topic-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0), rgba(200,150,62,0.03));
+  pointer-events: none;
+}
+
 @media (max-width: 1080px) {
   .page-hero-grid,
+  .page-hero-grid--compact,
   .section-grid,
   .section-grid--equal {
     grid-template-columns: 1fr;

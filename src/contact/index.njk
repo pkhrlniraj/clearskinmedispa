@@ -43,17 +43,17 @@
 
   <section class="page-section">
     <div class="container contact-grid">
+      <div class="contact-card contact-card--primary">
+        <i class="fa-regular fa-calendar"></i>
+        <h3>Book Online</h3>
+        <p>Already know what you want? Booking through Fresha is the fastest way to reserve your treatment time.</p>
+        <p><a href="{{ site.bookingUrl }}" target="_blank" rel="noopener">Open Fresha booking</a></p>
+      </div>
       <div class="contact-card">
         <i class="fa-solid fa-phone"></i>
         <h3>Call Us</h3>
         <p>If you want help choosing the right service, phone is the fastest way to speak with the clinic.</p>
         <p><a href="{{ site.phoneHref }}">{{ site.phoneDisplay }}</a></p>
-      </div>
-      <div class="contact-card">
-        <i class="fa-solid fa-envelope"></i>
-        <h3>Email Us</h3>
-        <p>Reach out with general questions, treatment planning questions, or timing details for your next visit.</p>
-        <p><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
       </div>
       <div class="contact-card">
         <i class="fa-solid fa-location-dot"></i>
@@ -83,6 +83,10 @@
           <li><strong>{{ row.label }}</strong><span>{{ row.value }}</span></li>
           {% endfor %}
         </ul>
+        <div class="hero-contact">
+          <a href="mailto:{{ site.email }}"><i class="fa-solid fa-envelope"></i>{{ site.email }}</a>
+          <a href="{{ site.mapUrl }}" target="_blank" rel="noopener"><i class="fa-solid fa-map-location-dot"></i>Open in Google Maps</a>
+        </div>
       </div>
     </div>
   </section>

@@ -1,5 +1,6 @@
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addWatchTarget("homepage.html");
 
   eleventyConfig.addFilter("json", function (value) {

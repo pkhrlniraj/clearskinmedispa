@@ -2,11 +2,11 @@
   {% include "components/breadcrumbs.njk" %}
 
   <section class="blog-hero">
-    <div class="container">
-      <div class="empty-state">
+    <div class="container page-hero-grid page-hero-grid--compact">
+      <div class="page-hero-copy blog-copy">
         <span class="page-badge"><i class="fa-solid fa-pen-nib"></i>Educational Content Hub</span>
-        <h1 class="page-hero-title">The Clear Skin blog is ready for content</h1>
-        <p>
+        <h1 class="page-hero-title">The Clear Skin blog is ready to support discovery and bookings</h1>
+        <p class="page-hero-summary">
           The blog structure is in place for future SEO articles, treatment explainers, aftercare guides, and local skin-care content. Posts can be added later without changing the overall site structure.
         </p>
         <div class="page-actions">
@@ -17,6 +17,21 @@
             <i class="fa-solid fa-envelope"></i>Contact The Clinic
           </a>
         </div>
+        <div class="pill-grid blog-pill-grid" role="list">
+          <span class="pill-link pill-link--static" role="listitem">Treatment Guides</span>
+          <span class="pill-link pill-link--static" role="listitem">Aftercare Tips</span>
+          <span class="pill-link pill-link--static" role="listitem">Pricing Expectations</span>
+          <span class="pill-link pill-link--static" role="listitem">Local Brampton Content</span>
+        </div>
+      </div>
+      <div class="hero-side-card blog-outline-card">
+        <span class="section-label">Publishing Framework</span>
+        <h3>What this content lane is built to do</h3>
+        <ul class="stack-list" role="list">
+          <li><i class="fa-solid fa-check"></i><span>Answer hesitation before someone books a treatment</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Support local SEO around Brampton and nearby areas</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Drive readers into service pages and Fresha bookings</span></li>
+        </ul>
       </div>
     </div>
   </section>
@@ -37,6 +52,33 @@
           <p>Future posts can cover candidacy, prep, aftercare, pricing expectations, and results timelines for {{ service.name | lower }}.</p>
         </div>
         {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--muted">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Why It Matters</span>
+        <h2 class="section-title">Content that helps clients choose with confidence</h2>
+        <p class="section-subtitle">The blog should feel like an extension of the consultation experience: clear, useful, and tied directly to the treatments people are already considering.</p>
+      </div>
+      <div class="feature-grid feature-grid--three">
+        <div class="feature-card">
+          <i class="fa-solid fa-comments"></i>
+          <h3>Pre-booking clarity</h3>
+          <p>Strong articles answer common objections before a call or consultation even happens.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-link"></i>
+          <h3>Smarter internal linking</h3>
+          <p>Each post can direct readers into a service page, a local page, or a direct booking CTA.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-location-dot"></i>
+          <h3>Local relevance</h3>
+          <p>Articles can reinforce Clear Skin as the Brampton-area destination for laser and skin treatments.</p>
+        </div>
       </div>
     </div>
   </section>
