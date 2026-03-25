@@ -2,6 +2,21 @@ body {
   overflow-x: hidden;
 }
 
+.nav-logo img {
+  width: auto;
+  max-width: 240px;
+  max-height: 50px;
+}
+
+.footer-brand img {
+  width: auto;
+  max-width: 240px;
+  height: auto;
+  max-height: 52px;
+  filter: none;
+  opacity: 1;
+}
+
 .page-shell {
   padding-top: 76px;
 }
@@ -761,6 +776,11 @@ body {
 @media (max-width: 768px) {
   .page-shell {
     padding-top: 72px;
+  }
+
+  .nav-logo img {
+    max-width: 200px;
+    max-height: 42px;
   }
 
   .page-hero {

@@ -100,8 +100,9 @@ const site = {
     }
   ],
   logo: {
-    light: "https://clearskinmedispa.com/New/wp-content/uploads/2026/03/clear-skin-logo-transparent.png",
-    dark: "https://clearskinmedispa.com/New/wp-content/uploads/2026/03/clear-skin-logo-transparent.png"
+    light: "/assets/media/clear-skin-logo.png",
+    dark: "/assets/media/clear-skin-logo.png",
+    absolute: "https://clearskinmedispa.com/assets/media/clear-skin-logo.png"
   },
   images: {
     aboutHero:
@@ -207,7 +208,7 @@ site.sitewideSchemaBlocks = [
     "@type": "Organization",
     name: site.name,
     url: site.url,
-    logo: site.logo.light,
+    logo: site.logo.absolute,
     image: site.ogImage,
     description:
       "Clear Skin Medi Spa is a premier medical aesthetics clinic in Brampton specializing in pain-free laser hair removal, HydraFacial, microneedling, OxyGeneo, and advanced skincare treatments.",
