@@ -335,20 +335,49 @@
        HERO SECTION
     ======================================== */
     #hero {
-      min-height: 100vh;
-      background-image:
-        linear-gradient(105deg, rgba(26,22,18,0.97) 0%, rgba(26,22,18,0.88) 35%, rgba(26,22,18,0.45) 60%, rgba(26,22,18,0.12) 100%),
-        url('https://clearskinmedispa.com/New/wp-content/uploads/2023/11/Soprano-Ice-Cover-Photo-scaled.jpg');
-      background-size: cover;
-      background-position: 80% 30%;
-      background-repeat: no-repeat;
-      display: flex;
-      align-items: center;
-      padding-top: 76px;
+      padding: 96px 0 30px;
+      background:
+        linear-gradient(180deg, #fff 0%, var(--bg-cream) 100%);
+    }
+    .hero-shell {
+      position: relative;
+      min-height: clamp(520px, 68vh, 640px);
+      overflow: hidden;
+      border-radius: 34px;
+      background: #efa2c3;
+      box-shadow: 0 28px 70px rgba(26,22,18,0.14);
+      border: 1px solid rgba(255,255,255,0.55);
+    }
+    .hero-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(90deg, rgba(26,22,18,0.72) 0%, rgba(26,22,18,0.58) 24%, rgba(26,22,18,0.24) 46%, rgba(26,22,18,0) 62%);
+      pointer-events: none;
+    }
+    .hero-media {
+      position: absolute;
+      inset: 0;
+    }
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 66% center;
+      display: block;
     }
     .hero-content {
-      max-width: 640px;
-      padding: 60px 0;
+      position: relative;
+      z-index: 2;
+      min-height: inherit;
+      display: flex;
+      align-items: center;
+      padding: clamp(38px, 5vw, 72px);
+    }
+    .hero-copy {
+      max-width: 500px;
     }
     .hero-badge {
       display: inline-flex;
@@ -368,45 +397,58 @@
     .hero-badge i { font-size: 10px; }
     .hero-title {
       font-family: var(--font-head);
-      font-size: clamp(36px, 5vw, 62px);
+      font-size: clamp(36px, 4.8vw, 58px);
       font-weight: 700;
       color: #fff;
-      line-height: 1.15;
-      margin-bottom: 22px;
+      line-height: 1.08;
+      margin-bottom: 18px;
     }
     .hero-title span { color: var(--gold-light); }
     .hero-text {
       font-size: 17px;
       color: rgba(255,255,255,0.82);
       line-height: 1.75;
-      margin-bottom: 38px;
-      max-width: 520px;
+      margin-bottom: 30px;
+      max-width: 470px;
     }
     .hero-buttons {
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      margin-bottom: 48px;
+      margin-bottom: 0;
     }
-    .hero-stats {
-      display: flex;
-      gap: 32px;
-      flex-wrap: wrap;
+    #hero .btn-outline {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
     }
-    .hero-stat {
+    #hero .btn-outline:hover {
+      background: rgba(255,255,255,0.16);
+    }
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .hero-metric {
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 5px;
+      padding: 22px 24px;
+      border-radius: 22px;
+      background: rgba(255,255,255,0.95);
+      border: 1px solid rgba(200,150,62,0.16);
+      box-shadow: var(--shadow-sm);
     }
-    .hero-stat-num {
+    .hero-metric-value {
       font-family: var(--font-head);
-      font-size: 26px;
+      font-size: clamp(28px, 3vw, 36px);
       font-weight: 700;
-      color: var(--gold-light);
+      color: var(--dark);
     }
-    .hero-stat-label {
+    .hero-metric-label {
       font-size: 12px;
-      color: rgba(255,255,255,0.6);
+      color: var(--text-light);
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
@@ -458,6 +500,82 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
       margin-top: 2px;
+    }
+    @media (max-width: 900px) {
+      #hero {
+        padding: 86px 0 24px;
+      }
+      .hero-shell {
+        min-height: 0;
+        border-radius: 26px;
+      }
+      .hero-shell::before {
+        display: none;
+      }
+      .hero-media {
+        position: relative;
+        height: min(50vw, 320px);
+      }
+      .hero-media img {
+        position: static;
+        object-position: 68% center;
+      }
+      .hero-content {
+        min-height: 0;
+        padding: 0;
+        display: block;
+      }
+      .hero-copy {
+        max-width: none;
+        padding: 28px 24px 30px;
+        background: #fff;
+      }
+      .hero-badge {
+        background: var(--gold-pale);
+        border-color: rgba(200,150,62,0.35);
+        color: var(--gold-dark);
+      }
+      .hero-title {
+        color: var(--dark);
+        font-size: clamp(34px, 8vw, 46px);
+      }
+      .hero-title span {
+        color: var(--gold-dark);
+      }
+      .hero-text {
+        color: var(--text);
+        max-width: none;
+      }
+      #hero .btn-outline {
+        color: var(--gold-dark);
+        border-color: rgba(200,150,62,0.5);
+        background: transparent;
+        backdrop-filter: none;
+      }
+      #hero .btn-outline:hover {
+        background: var(--gold-pale);
+        border-color: var(--gold);
+      }
+      .hero-metrics {
+        grid-template-columns: 1fr;
+      }
+      .hero-metric {
+        align-items: center;
+        text-align: center;
+      }
+      .trust-item {
+        min-width: 150px;
+        padding: 18px 18px;
+      }
+    }
+    @media (max-width: 560px) {
+      .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .hero-buttons .btn {
+        justify-content: center;
+      }
     }
 
     /* ========================================
@@ -1608,39 +1726,51 @@
 <main>
 <section id="hero" aria-label="Hero banner">
   <div class="container">
-    <div class="hero-content">
-      <div class="hero-badge">
-        <i class="fa-solid fa-location-dot"></i>
-        Brampton's Premier Medi Spa
+    <div class="hero-shell">
+      <div class="hero-media">
+        <img src="/assets/media/soprano-ice-cover-hero.png"
+             alt="Smiling woman representing Clear Skin Medi Spa laser hair removal and advanced skin treatments"
+             width="2560" height="974"
+             loading="eager"
+             fetchpriority="high"
+             decoding="async">
       </div>
-      <h1 class="hero-title">
-        Laser Hair Removal<br>&amp; <span>Advanced Skin</span><br>Treatments
-      </h1>
-      <p class="hero-text">
-        Experience virtually painless laser hair removal with Soprano ICE Platinum technology — the gold standard safe for all skin tones and hair types. Proudly serving Brampton &amp; the Greater Toronto Area.
-      </p>
-      <div class="hero-buttons">
-        <a href="https://www.fresha.com/book-now/clear-skin-medi-spa-limited-z7hvfgwe/services"
-           class="btn btn-primary" target="_blank" rel="noopener">
-          <i class="fa-regular fa-calendar"></i>Book Free Consultation
-        </a>
-        <a href="#services" class="btn btn-outline">
-          Explore Services <i class="fa-solid fa-arrow-down"></i>
-        </a>
+      <div class="hero-content">
+        <div class="hero-copy">
+          <div class="hero-badge">
+            <i class="fa-solid fa-location-dot"></i>
+            Brampton's Premier Medi Spa
+          </div>
+          <h1 class="hero-title">
+            Laser Hair Removal<br>&amp; <span>Advanced Skin</span><br>Treatments
+          </h1>
+          <p class="hero-text">
+            Experience virtually painless laser hair removal with Soprano ICE Platinum technology — the gold standard safe for all skin tones and hair types. Proudly serving Brampton &amp; the Greater Toronto Area.
+          </p>
+          <div class="hero-buttons">
+            <a href="https://www.fresha.com/book-now/clear-skin-medi-spa-limited-z7hvfgwe/services"
+               class="btn btn-primary" target="_blank" rel="noopener">
+              <i class="fa-regular fa-calendar"></i>Book Free Consultation
+            </a>
+            <a href="#services" class="btn btn-outline">
+              Explore Services <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="hero-stats" aria-label="Quick facts">
-        <div class="hero-stat">
-          <span class="hero-stat-num">★ 4.9</span>
-          <span class="hero-stat-label">Google Rating</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">11+</span>
-          <span class="hero-stat-label">Treatments Offered</span>
-        </div>
-        <div class="hero-stat">
-          <span class="hero-stat-num">All</span>
-          <span class="hero-stat-label">Skin Tones Welcome</span>
-        </div>
+    </div>
+    <div class="hero-metrics" aria-label="Quick facts">
+      <div class="hero-metric">
+        <span class="hero-metric-value">4.9</span>
+        <span class="hero-metric-label">Google Rating</span>
+      </div>
+      <div class="hero-metric">
+        <span class="hero-metric-value">11+</span>
+        <span class="hero-metric-label">Treatments Offered</span>
+      </div>
+      <div class="hero-metric">
+        <span class="hero-metric-value">All</span>
+        <span class="hero-metric-label">Skin Tones Welcome</span>
       </div>
     </div>
   </div>
