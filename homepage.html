@@ -362,6 +362,7 @@
       width: 100%;
       height: auto;
       display: block;
+      transform: translateX(2.25%);
     }
     .hero-content {
       position: absolute;
@@ -370,12 +371,15 @@
       pointer-events: none;
     }
     .hero-content .container {
+      max-width: 1480px;
+      padding-left: clamp(20px, 3vw, 56px);
+      padding-right: clamp(20px, 3vw, 56px);
       height: 100%;
       display: flex;
       align-items: center;
     }
     .hero-copy {
-      max-width: clamp(340px, 29vw, 480px);
+      max-width: clamp(300px, 25vw, 420px);
       padding: clamp(36px, 4vw, 60px) 0;
       pointer-events: auto;
     }
@@ -397,7 +401,7 @@
     .hero-badge i { font-size: 10px; }
     .hero-title {
       font-family: var(--font-head);
-      font-size: clamp(36px, 4.1vw, 60px);
+      font-size: clamp(32px, 3.55vw, 52px);
       font-weight: 700;
       color: #fff;
       line-height: 1.08;
@@ -405,11 +409,11 @@
     }
     .hero-title span { color: var(--gold-light); }
     .hero-text {
-      font-size: 17px;
+      font-size: 16px;
       color: rgba(255,255,255,0.82);
       line-height: 1.75;
       margin-bottom: 30px;
-      max-width: 460px;
+      max-width: 400px;
     }
     .hero-buttons {
       display: flex;
@@ -511,6 +515,9 @@
       .hero-media {
         width: 100%;
       }
+      .hero-media img {
+        transform: none;
+      }
       .hero-content {
         position: static;
         pointer-events: auto;
@@ -519,6 +526,9 @@
       .hero-content .container {
         display: block;
         height: auto;
+        max-width: var(--container);
+        padding-left: 24px;
+        padding-right: 24px;
       }
       .hero-copy {
         max-width: none;
