@@ -1,0 +1,104 @@
+{% set featuredCards = services | bySlugs(localPage.featuredServices) %}
+<main class="page-shell">
+  {% include "components/breadcrumbs.njk" %}
+
+  <section class="page-hero">
+    <div class="container page-hero-grid">
+      <div class="page-hero-copy">
+        <span class="page-badge"><i class="fa-solid fa-map-location-dot"></i>{{ localPage.hero.eyebrow }}</span>
+        <h1 class="page-hero-title">{{ localPage.hero.title }}</h1>
+        <p class="page-hero-summary">{{ localPage.hero.summary }}</p>
+        <div class="page-actions">
+          <a href="{{ site.bookingUrl }}" class="btn btn-primary" target="_blank" rel="noopener">
+            <i class="fa-regular fa-calendar"></i>Book Your Visit
+          </a>
+          <a href="{{ site.mapUrl }}" class="btn btn-outline-gold" target="_blank" rel="noopener">
+            <i class="fa-solid fa-location-dot"></i>Get Directions
+          </a>
+        </div>
+        <ul class="hero-highlights" role="list">
+          {% for highlight in localPage.hero.highlights %}
+          <li><i class="fa-solid fa-circle-check"></i><span>{{ highlight }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="hero-side-stack">
+        <div class="page-image-frame">
+          <img src="{{ site.ogImage }}" alt="Clear Skin Medi Spa exterior and treatment imagery">
+          <span class="page-image-caption"><i class="fa-solid fa-car-side"></i>Easy access from {{ localPage.areaName }}</span>
+        </div>
+        <div class="hero-side-card">
+          <h3>Visit Details</h3>
+          <ul class="stack-list" role="list">
+            <li><i class="fa-solid fa-location-dot"></i><span>{{ site.address.formatted }}</span></li>
+            <li><i class="fa-solid fa-phone"></i><span>{{ site.phoneDisplay }}</span></li>
+            <li><i class="fa-regular fa-clock"></i><span>Open 7 days with free parking</span></li>
+            <li><i class="fa-solid fa-star"></i><span>4.9-star rated local medi spa</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include "components/trust-bar.njk" %}
+
+  <section class="page-section">
+    <div class="container section-grid">
+      <div class="section-copy">
+        <span class="section-label">Why Clients Visit From {{ localPage.areaName }}</span>
+        <h2 class="section-title">A nearby clinic that still feels premium and personal</h2>
+        {% for paragraph in localPage.intro %}
+        <p>{{ paragraph }}</p>
+        {% endfor %}
+      </div>
+      <div class="info-panel">
+        <h3>Why it works well for {{ localPage.areaName }} clients</h3>
+        <ul class="feature-list" role="list">
+          {% for item in localPage.localAdvantages %}
+          <li><i class="fa-solid fa-check"></i><span>{{ item }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--muted">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Getting Here</span>
+        <h2 class="section-title">Directions from {{ localPage.areaName }}</h2>
+        <p class="section-subtitle">Simple travel routes, easy parking, and online booking make repeat visits much easier.</p>
+      </div>
+      <div class="feature-grid">
+        {% for item in localPage.directions %}
+        <div class="feature-card">
+          <i class="fa-solid fa-route"></i>
+          <h3>Route {{ loop.index }}</h3>
+          <p>{{ item }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {% set cards = featuredCards %}
+  {% set serviceSectionLabel = "Popular Near " ~ localPage.areaName %}
+  {% set serviceSectionTitle = "Frequently booked treatments for " ~ localPage.areaName ~ " clients" %}
+  {% set serviceSectionIntro = "These services are common starting points for local clients looking for better skin, more confidence, or longer-term maintenance." %}
+  {% set highlightFirstCard = "Top Pick" %}
+  {% include "components/service-grid.njk" %}
+
+  {% include "components/reviews-strip.njk" %}
+
+  {% set faqs = localPage.faq %}
+  {% set faqLabel = "Local Questions" %}
+  {% set faqTitle = localPage.areaName ~ " client FAQs" %}
+  {% set faqIntro = "Here are the questions nearby clients ask most often before booking." %}
+  {% include "components/faq-list.njk" %}
+
+  {% set ctaTitle = localPage.cta.title %}
+  {% set ctaText = localPage.cta.text %}
+  {% set ctaButtonLabel = "Book Your Visit" %}
+  {% include "components/cta-band.njk" %}
+</main>

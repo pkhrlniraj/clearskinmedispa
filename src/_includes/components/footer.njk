@@ -1,0 +1,75 @@
+<footer id="footer" role="contentinfo" aria-label="Site footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="{{ site.logo.light }}"
+             alt="Clear Skin Medi Spa logo"
+             width="140"
+             height="47"
+             loading="lazy">
+        <p>Premium medi spa in Brampton offering advanced laser hair removal and results-driven skin treatments for all skin tones.</p>
+        <div class="footer-socials" aria-label="Social media links">
+          {% for social in site.socials %}
+          <a href="{{ social.url }}"
+             class="footer-social"
+             aria-label="Clear Skin Medi Spa on {{ social.label }}"
+             target="_blank"
+             rel="noopener noreferrer">
+            <i class="{{ social.icon }}"></i>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul role="list">
+          {% for item in site.navigation.quickLinks %}
+          <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+          {% endfor %}
+          <li><a href="{{ site.bookingUrlShort }}" target="_blank" rel="noopener">Book Now</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Popular Services</h4>
+        <ul role="list">
+          {% for service in site.services | take(7) %}
+          <li><a href="/{{ service.slug }}/">{{ service.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+          <address style="font-style:normal;">
+            <span>{{ site.address.line1 }}<br>{{ site.address.city }}, {{ site.address.region }} {{ site.address.postalCode }}</span>
+          </address>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-phone" aria-hidden="true"></i>
+          <a href="{{ site.phoneHref }}">{{ site.phoneDisplay }}</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-regular fa-clock" aria-hidden="true"></i>
+          <span>Mon-Fri: 10am - 7pm<br>Sat-Sun: 10am - 5pm</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {% year %} {{ site.name }}. All rights reserved.</p>
+      <p>
+        <a href="/privacy-policy/">Privacy Policy</a>
+        &nbsp;·&nbsp;
+        <a href="/contact/">Contact</a>
+      </p>
+    </div>
+  </div>
+</footer>

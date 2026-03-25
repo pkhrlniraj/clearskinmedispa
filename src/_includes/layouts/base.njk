@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% set resolvedTitle = metaTitle or title or site.name %}
+  {% set resolvedDescription = metaDescription or description or "Advanced laser hair removal and skin treatments in Brampton." %}
+  {% set resolvedPath = canonicalPath or page.url %}
+  {% set resolvedCanonical = site.url ~ resolvedPath %}
+  {% set resolvedOgImage = ogImage or site.ogImage %}
+  {% set resolvedOgType = ogType or "website" %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ resolvedTitle }}</title>
+  <meta name="description" content="{{ resolvedDescription }}">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{{ resolvedCanonical }}">
+  <meta property="og:title" content="{{ resolvedTitle }}">
+  <meta property="og:description" content="{{ resolvedDescription }}">
+  <meta property="og:type" content="{{ resolvedOgType }}">
+  <meta property="og:url" content="{{ resolvedCanonical }}">
+  <meta property="og:image" content="{{ resolvedOgImage }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/homepage-base.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body class="{{ pageClass or '' }}">
+  {% include "components/header.njk" %}
+  {{ content | safe }}
+  {% include "components/footer.njk" %}
+
+  {% for block in site.sitewideSchemaBlocks %}
+  <script type="application/ld+json">{{ block | json | safe }}</script>
+  {% endfor %}
+
+  {% set pageSchemaBlocks = schemaBlocks or [] %}
+  {% if page.url == "/" %}
+    {% set pageSchemaBlocks = site.homepageSchemaBlocks %}
+  {% endif %}
+
+  {% for block in pageSchemaBlocks %}
+  <script type="application/ld+json">{{ block | json | safe }}</script>
+  {% endfor %}
+
+  <script src="/assets/js/homepage-base.js"></script>
+</body>
+</html>

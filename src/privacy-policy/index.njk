@@ -1,0 +1,54 @@
+<main class="page-shell">
+  {% include "components/breadcrumbs.njk" %}
+
+  <section class="page-hero">
+    <div class="container">
+      <span class="page-badge"><i class="fa-solid fa-shield-halved"></i>Privacy & Data Use</span>
+      <h1 class="page-hero-title">Privacy policy</h1>
+      <p class="page-hero-summary">
+        This page explains what information may be collected when you interact with Clear Skin Medi Spa online, how that information is used, and which third-party tools are involved in booking and analytics.
+      </p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container policy-stack">
+      <div class="policy-card policy-copy">
+        <h2>Information we may collect</h2>
+        <p>When you book an appointment, contact the clinic, or interact with the site, we may receive information such as your name, contact details, appointment preferences, and service interests.</p>
+        <p>Some information may also be collected automatically through standard website analytics tools, cookies, or platform logs, such as browser type, device information, and pages viewed.</p>
+      </div>
+
+      <div class="policy-card policy-copy">
+        <h2>How booking information is handled</h2>
+        <p>Online appointment booking is handled through Fresha. When you click a booking link or complete a booking there, your information is processed according to Fresha's own terms and privacy practices in addition to ours.</p>
+        <p>If you prefer, you can also contact the clinic directly by phone or email using the details on the contact page.</p>
+      </div>
+
+      <div class="policy-card policy-copy">
+        <h2>How we use information</h2>
+        <ul class="policy-list" role="list">
+          <li><i class="fa-solid fa-check"></i><span>To confirm, manage, or follow up on appointments and inquiries</span></li>
+          <li><i class="fa-solid fa-check"></i><span>To improve the website experience and understand which pages and services people use most</span></li>
+          <li><i class="fa-solid fa-check"></i><span>To communicate important updates related to clinic visits or booking requests</span></li>
+        </ul>
+      </div>
+
+      <div class="policy-card policy-copy">
+        <h2>Third-party tools and links</h2>
+        <p>This site may link to or rely on third-party services such as Fresha, Google Maps, Google Analytics, social media platforms, or other embedded services. Those platforms may collect information according to their own privacy policies.</p>
+        <p>We recommend reviewing those policies directly if you use those services from this website.</p>
+      </div>
+
+      <div class="policy-card policy-copy">
+        <h2>Questions about privacy</h2>
+        <p>If you have a privacy-related question, need help with a booking, or want to request that we review the contact information you have shared with the clinic, please reach out directly.</p>
+        <div class="policy-inline-links">
+          <a href="{{ site.phoneHref }}">{{ site.phoneDisplay }}</a>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+          <a href="/contact/">Contact page</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

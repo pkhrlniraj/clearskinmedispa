@@ -1,0 +1,61 @@
+<header id="navbar" role="banner">
+  <div class="container">
+    <nav class="nav-inner" aria-label="Main navigation">
+      <a href="/" class="nav-logo" aria-label="Clear Skin Medi Spa Home">
+        <img src="{{ site.logo.light }}"
+             alt="Clear Skin Medi Spa logo"
+             width="180"
+             height="58">
+      </a>
+
+      <ul class="nav-menu" role="list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about/">About Us</a></li>
+        <li class="nav-dropdown">
+          <a href="/#services" aria-haspopup="true">Services</a>
+          <ul class="dropdown-menu" role="list" aria-label="Services submenu">
+            {% for item in site.navigation.services %}
+            <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/contact/">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="{{ site.phoneHref }}" class="nav-phone">
+          <i class="fa-solid fa-phone"></i>{{ site.phoneDisplay }}
+        </a>
+        <a href="{{ site.bookingUrlShort }}"
+           class="btn btn-primary"
+           target="_blank"
+           rel="noopener">Book Now</a>
+      </div>
+
+      <button class="hamburger"
+              id="hamburger"
+              aria-label="Toggle menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Mobile navigation">
+    <a href="/">Home</a>
+    <a href="/about/">About Us</a>
+    {% for item in site.navigation.services %}
+    <a href="{{ item.url }}">{{ item.label }}</a>
+    {% endfor %}
+    <a href="/blog/">Blog</a>
+    <a href="/contact/">Contact</a>
+    <a href="{{ site.bookingUrl }}"
+       class="mobile-book"
+       target="_blank"
+       rel="noopener">Book Free Consultation</a>
+  </div>
+</header>

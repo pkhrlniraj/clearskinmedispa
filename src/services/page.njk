@@ -1,0 +1,136 @@
+{% set relatedCards = services | bySlugs(service.relatedServices) %}
+<main class="page-shell">
+  {% include "components/breadcrumbs.njk" %}
+
+  <section class="page-hero">
+    <div class="container page-hero-grid">
+      <div class="page-hero-copy">
+        <span class="page-badge">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>{{ service.hero.eyebrow }}
+        </span>
+        <h1 class="page-hero-title">{{ service.hero.title }}</h1>
+        <p class="page-hero-summary">{{ service.hero.summary }}</p>
+        <div class="page-actions">
+          <a href="{{ site.bookingUrl }}" class="btn btn-primary" target="_blank" rel="noopener">
+            <i class="fa-regular fa-calendar"></i>Book On Fresha
+          </a>
+          <a href="{{ site.phoneHref }}" class="btn btn-outline-gold">
+            <i class="fa-solid fa-phone"></i>Call {{ site.phoneDisplay }}
+          </a>
+        </div>
+        <ul class="hero-highlights" role="list">
+          {% for highlight in service.hero.highlights %}
+          <li><i class="fa-solid fa-circle-check"></i><span>{{ highlight }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <div class="hero-side-stack">
+        <div class="page-image-frame">
+          <img src="{{ service.image }}" alt="{{ service.imageAlt }}">
+          <span class="page-image-caption"><i class="fa-solid fa-location-dot"></i>Brampton, ON</span>
+        </div>
+        <div class="hero-side-card">
+          <div class="hero-price">
+            <small>Pricing</small>{{ service.priceLabel }}
+          </div>
+          <h3>Quick Facts</h3>
+          <ul class="stack-list" role="list">
+            {% for fact in service.quickFacts %}
+            <li><i class="fa-solid fa-check"></i><span>{{ fact }}</span></li>
+            {% endfor %}
+          </ul>
+          <div class="hero-contact">
+            <a href="{{ site.phoneHref }}"><i class="fa-solid fa-phone"></i>{{ site.phoneDisplay }}</a>
+            <a href="{{ site.mapUrl }}" target="_blank" rel="noopener"><i class="fa-solid fa-location-dot"></i>{{ site.address.formatted }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include "components/trust-bar.njk" %}
+
+  <section class="page-section">
+    <div class="container section-grid">
+      <div class="section-copy">
+        <span class="section-label">Treatment Overview</span>
+        <h2 class="section-title">{{ service.name }} designed around your goals</h2>
+        {% for paragraph in service.intro %}
+        <p>{{ paragraph }}</p>
+        {% endfor %}
+      </div>
+      <div class="info-panel">
+        <h3>{{ service.benefitsTitle }}</h3>
+        <ul class="feature-list" role="list">
+          {% for item in service.benefits %}
+          <li><i class="fa-solid fa-check"></i><span>{{ item }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--muted">
+    <div class="container section-grid section-grid--equal">
+      <div class="info-panel">
+        <h3>{{ service.idealForTitle }}</h3>
+        <ul class="feature-list" role="list">
+          {% for item in service.idealFor %}
+          <li><i class="fa-solid fa-star"></i><span>{{ item }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="info-panel">
+        <h3>{{ service.processTitle }}</h3>
+        <div class="mini-stats">
+          {% for step in service.process %}
+          <div class="mini-stat">
+            <strong>{{ step.title }}</strong>
+            <span>{{ step.text }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">What Your Visit Looks Like</span>
+        <h2 class="section-title">A straightforward, consultation-led process</h2>
+        <p class="section-subtitle">We keep treatment plans clear, realistic, and focused on visible results instead of guesswork.</p>
+      </div>
+      <div class="process-grid">
+        {% for step in service.process %}
+        <div class="process-card">
+          <i class="fa-solid fa-sparkles"></i>
+          <h3>{{ step.title }}</h3>
+          <p>{{ step.text }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  {% include "components/reviews-strip.njk" %}
+
+  {% set cards = relatedCards %}
+  {% set serviceSectionLabel = "Related Services" %}
+  {% set serviceSectionTitle = "Treatments that pair well with " ~ service.name %}
+  {% set serviceSectionIntro = "Many clients combine complementary treatments to improve results, comfort, or maintenance." %}
+  {% set highlightFirstCard = "" %}
+  {% include "components/service-grid.njk" %}
+
+  {% set faqs = service.faq %}
+  {% set faqLabel = "Service FAQs" %}
+  {% set faqTitle = service.name ~ " FAQs" %}
+  {% set faqIntro = "Get quick answers before you book your next appointment." %}
+  {% include "components/faq-list.njk" %}
+
+  {% set ctaTitle = service.cta.title %}
+  {% set ctaText = service.cta.text %}
+  {% set ctaButtonLabel = "Book " ~ service.name %}
+  {% include "components/cta-band.njk" %}
+</main>

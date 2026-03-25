@@ -1,0 +1,43 @@
+<main class="page-shell">
+  {% include "components/breadcrumbs.njk" %}
+
+  <section class="blog-hero">
+    <div class="container">
+      <div class="empty-state">
+        <span class="page-badge"><i class="fa-solid fa-pen-nib"></i>Educational Content Hub</span>
+        <h1 class="page-hero-title">The Clear Skin blog is ready for content</h1>
+        <p>
+          The blog structure is in place for future SEO articles, treatment explainers, aftercare guides, and local skin-care content. Posts can be added later without changing the overall site structure.
+        </p>
+        <div class="page-actions">
+          <a href="{{ site.bookingUrl }}" class="btn btn-primary" target="_blank" rel="noopener">
+            <i class="fa-regular fa-calendar"></i>Book A Treatment
+          </a>
+          <a href="/contact/" class="btn btn-outline-gold">
+            <i class="fa-solid fa-envelope"></i>Contact The Clinic
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Planned Topic Areas</span>
+        <h2 class="section-title">A strong starting point for future content</h2>
+        <p class="section-subtitle">The blog template is built so educational posts can reinforce conversions, answer objections, and support local SEO over time.</p>
+      </div>
+
+      <div class="blog-topic-grid">
+        {% for service in services | take(6) %}
+        <div class="blog-topic-card">
+          <i class="fa-solid fa-book-open"></i>
+          <h3>{{ service.name }}</h3>
+          <p>Future posts can cover candidacy, prep, aftercare, pricing expectations, and results timelines for {{ service.name | lower }}.</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,25 @@
+{% if faqs and faqs.length %}
+<section class="page-section page-section--faq" aria-labelledby="faq-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">{{ faqLabel or "Common Questions" }}</span>
+      <h2 class="section-title" id="faq-heading">{{ faqTitle or "Frequently Asked Questions" }}</h2>
+      <p class="section-subtitle">{{ faqIntro or "Need a quick answer before you book? Start here." }}</p>
+    </div>
+
+    <div class="faq-list" role="list">
+      {% for item in faqs %}
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false" aria-controls="faq-a{{ loop.index }}">
+          <span class="faq-question-text">{{ item.question }}</span>
+          <span class="faq-icon" aria-hidden="true"><i class="fa-solid fa-chevron-down"></i></span>
+        </button>
+        <div class="faq-answer" id="faq-a{{ loop.index }}" role="region">
+          <div class="faq-answer-inner">{{ item.answer }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

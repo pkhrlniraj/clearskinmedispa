@@ -1,0 +1,119 @@
+{% set featuredCards = services | bySlugs(site.featuredServiceSlugs) %}
+<main class="page-shell">
+  {% include "components/breadcrumbs.njk" %}
+
+  <section class="page-hero">
+    <div class="container page-hero-grid">
+      <div class="page-hero-copy">
+        <span class="page-badge"><i class="fa-solid fa-heart"></i>Women-Owned Brampton Medi Spa</span>
+        <h1 class="page-hero-title">Meet the team behind Clear Skin Medi Spa</h1>
+        <p class="page-hero-summary">
+          Clear Skin Medi Spa was built to give Brampton and the surrounding GTA a more thoughtful, more personalized approach to advanced skin and laser treatments. Every plan starts with listening first.
+        </p>
+        <div class="page-actions">
+          <a href="{{ site.bookingUrl }}" class="btn btn-primary" target="_blank" rel="noopener">
+            <i class="fa-regular fa-calendar"></i>Book A Consultation
+          </a>
+          <a href="/contact/" class="btn btn-outline-gold">
+            <i class="fa-solid fa-location-dot"></i>Visit The Clinic
+          </a>
+        </div>
+        <ul class="hero-highlights" role="list">
+          <li><i class="fa-solid fa-circle-check"></i><span>Founded in 2021 by Archana and Bineeta Shrestha</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Certified medical aestheticians with a consultation-led approach</span></li>
+          <li><i class="fa-solid fa-circle-check"></i><span>Focused on real results, comfort, and inclusive care for all skin tones</span></li>
+        </ul>
+      </div>
+      <div class="hero-side-stack">
+        <div class="page-image-frame">
+          <img src="https://clearskinmedispa.com/New/wp-content/uploads/2024/02/Patrick-Brown-with-Ama-Soprano-Ice-Lase-Treatment-Machine-scaled.jpg"
+               alt="Clear Skin Medi Spa founders and team with clinic technology">
+          <span class="page-image-caption"><i class="fa-solid fa-certificate"></i>Soprano ICE Platinum Technology</span>
+        </div>
+        <div class="hero-side-card">
+          <h3>What clients can expect</h3>
+          <ul class="stack-list" role="list">
+            <li><i class="fa-solid fa-user-group"></i><span>Warm, pressure-free consultations and honest recommendations</span></li>
+            <li><i class="fa-solid fa-microscope"></i><span>Advanced treatments selected for safety, comfort, and visible results</span></li>
+            <li><i class="fa-solid fa-map-location-dot"></i><span>Convenient Brampton location close to Mississauga and the GTA</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include "components/trust-bar.njk" %}
+
+  <section class="page-section">
+    <div class="container section-grid">
+      <div class="section-copy">
+        <span class="section-label">Our Story</span>
+        <h2 class="section-title">Science-backed treatments, delivered with empathy</h2>
+        <p>
+          Archana and Bineeta built Clear Skin Medi Spa to create the kind of clinic they wished more people had access to: highly personalized, medically informed, and genuinely welcoming from the moment you walk in.
+        </p>
+        <p>
+          That means no one-size-fits-all recommendations and no rushed appointments. Instead, clients get a clear plan, realistic expectations, and a team that cares about comfort just as much as outcomes.
+        </p>
+        <p>
+          From laser hair removal and anti-aging facials to microneedling and skin resurfacing, every service is chosen and delivered with an eye toward both confidence and skin health.
+        </p>
+      </div>
+      <div class="info-panel">
+        <h3>What guides the clinic</h3>
+        <ul class="feature-list" role="list">
+          <li><i class="fa-solid fa-check"></i><span>Personalized plans instead of generic treatment menus</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Inclusive technology and protocols for a wide range of skin tones</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Comfort-first care without compromising results</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Long-term relationships with clients who return for maintenance and progress</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section page-section--muted">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Why Clients Choose Us</span>
+        <h2 class="section-title">The Clear Skin difference</h2>
+        <p class="section-subtitle">Technology matters, but so do honesty, consistency, and the way people feel when they are in your care.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <i class="fa-solid fa-bolt"></i>
+          <h3>Gold-standard technology</h3>
+          <p>Soprano ICE Platinum and other advanced treatment modalities help us treat hair removal and skin goals with more confidence and flexibility.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-hand-holding-heart"></i>
+          <h3>Supportive consultations</h3>
+          <p>Clients get realistic guidance, treatment sequencing that makes sense, and a clinic that takes questions seriously.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-users"></i>
+          <h3>Community-rooted care</h3>
+          <p>We are proud to serve Brampton, Mississauga, Bramalea, Caledon, Georgetown, and the wider GTA from our Financial Drive location.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-star"></i>
+          <h3>Results people come back for</h3>
+          <p>From laser packages to monthly facial maintenance, much of our growth comes from repeat clients and word-of-mouth referrals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% include "components/reviews-strip.njk" %}
+
+  {% set cards = featuredCards %}
+  {% set serviceSectionLabel = "What We Specialize In" %}
+  {% set serviceSectionTitle = "Start with a treatment people already trust us for" %}
+  {% set serviceSectionIntro = "If you are new to Clear Skin, these are some of the most requested starting points." %}
+  {% set highlightFirstCard = "Most Popular" %}
+  {% include "components/service-grid.njk" %}
+
+  {% set ctaTitle = "Let us recommend the right place to start" %}
+  {% set ctaText = "If you are not sure which treatment makes sense for your skin, book a consultation and we will help you map it out." %}
+  {% set ctaButtonLabel = "Book Your Consultation" %}
+  {% include "components/cta-band.njk" %}
+</main>

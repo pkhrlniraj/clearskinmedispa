@@ -1,0 +1,15 @@
+<div id="trust-bar" role="region" aria-label="Trust signals">
+  <div class="container">
+    <div class="trust-items">
+      {% for item in site.trustItems %}
+      <div class="trust-item">
+        <div class="trust-icon"><i class="{{ item.icon }}"></i></div>
+        <div class="trust-text-wrap">
+          <div class="trust-value">{{ item.value }}</div>
+          <div class="trust-label">{{ item.label }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

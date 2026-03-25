@@ -1,0 +1,19 @@
+<section id="cta-band" aria-labelledby="cta-heading">
+  <div class="container cta-band-inner">
+    <span class="section-label">{{ ctaLabel or "Get Started Today" }}</span>
+    <h2 class="section-title" id="cta-heading">{{ ctaTitle or "Ready for Your Best Skin?" }}</h2>
+    <p class="cta-band-text">
+      {{ ctaText or "Book your consultation and let our team recommend the right plan for your goals." }}
+    </p>
+    <a href="{{ ctaUrl or site.bookingUrlShort }}"
+       class="btn btn-primary"
+       target="_blank"
+       rel="noopener"
+       style="font-size:14px;padding:16px 36px;">
+      <i class="fa-regular fa-calendar-check"></i>{{ ctaButtonLabel or "Book Your Appointment" }}
+    </a>
+    <p class="cta-band-phone">
+      Or call us at <a href="{{ site.phoneHref }}">{{ site.phoneDisplay }}</a>
+    </p>
+  </div>
+</section>

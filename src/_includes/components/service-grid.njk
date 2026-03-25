@@ -1,0 +1,39 @@
+{% set gridCards = cards if cards else services | take(6) %}
+<section id="services" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">{{ serviceSectionLabel or "Featured Treatments" }}</span>
+      <h2 class="section-title" id="services-heading">{{ serviceSectionTitle or "Explore Our Most Requested Services" }}</h2>
+      <p class="section-subtitle">{{ serviceSectionIntro or "Choose a treatment that matches your goals, then book online in minutes." }}</p>
+    </div>
+
+    <div class="services-grid">
+      {% for service in gridCards %}
+      <article class="service-card">
+        <div class="service-card-img-wrap">
+          <img class="service-card-img"
+               src="{{ service.image }}"
+               alt="{{ service.imageAlt }}"
+               loading="lazy"
+               width="400"
+               height="300">
+          {% if loop.first and highlightFirstCard %}
+          <span class="service-card-tag">{{ highlightFirstCard }}</span>
+          {% endif %}
+        </div>
+        <div class="service-card-body">
+          <h3><a href="/{{ service.slug }}/">{{ service.name }}</a></h3>
+          <p class="service-card-desc">{{ service.hero.summary }}</p>
+          <div class="service-card-footer">
+            <div class="service-card-price"><span>From</span>{{ service.priceLabel | replace("From ", "") }}</div>
+            <a href="/{{ service.slug }}/" class="service-card-link">
+              Learn More <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+          <a href="{{ site.bookingUrl }}" class="service-card-book" target="_blank" rel="noopener">Book Now</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

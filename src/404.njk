@@ -1,0 +1,23 @@
+{% set featuredCards = services | bySlugs(site.featuredServiceSlugs) %}
+<main class="page-shell">
+  <section class="not-found-shell">
+    <div class="container">
+      <div class="not-found-card">
+        <span class="page-badge"><i class="fa-solid fa-compass"></i>Page Not Found</span>
+        <h1 class="page-hero-title">We could not find that page</h1>
+        <p>The link may be outdated, the page may have moved, or the URL may have been typed incorrectly. You can head back home or jump straight to a popular treatment below.</p>
+        <div class="page-actions">
+          <a href="/" class="btn btn-primary"><i class="fa-solid fa-house"></i>Go Home</a>
+          <a href="/contact/" class="btn btn-outline-gold"><i class="fa-solid fa-phone"></i>Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% set cards = featuredCards %}
+  {% set serviceSectionLabel = "Popular Treatments" %}
+  {% set serviceSectionTitle = "Here are a few places to continue" %}
+  {% set serviceSectionIntro = "If you were looking for a service page, one of these is a good next click." %}
+  {% set highlightFirstCard = "Top Pick" %}
+  {% include "components/service-grid.njk" %}
+</main>

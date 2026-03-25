@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+---
+<main class="page-shell">
+  {% include "components/breadcrumbs.njk" %}
+  <section class="page-hero">
+    <div class="container page-hero-grid">
+      <div class="page-hero-copy blog-copy">
+        <span class="page-badge"><i class="fa-solid fa-newspaper"></i>Clinic Education</span>
+        <h1 class="page-hero-title">{{ title }}</h1>
+        {% if excerpt %}
+        <p class="page-hero-summary">{{ excerpt }}</p>
+        {% endif %}
+        <div class="page-actions">
+          <a href="{{ site.bookingUrl }}" class="btn btn-primary" target="_blank" rel="noopener">
+            <i class="fa-regular fa-calendar"></i>Book A Treatment
+          </a>
+          <a href="/contact/" class="btn btn-outline-gold">
+            <i class="fa-solid fa-envelope"></i>Contact The Clinic
+          </a>
+        </div>
+      </div>
+      <div class="hero-side-card">
+        <h3>Article CTA Module</h3>
+        <ul class="stack-list" role="list">
+          <li><i class="fa-solid fa-check"></i><span>Use posts to answer objections and prep questions.</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Link readers into relevant service pages and booking CTAs.</span></li>
+          <li><i class="fa-solid fa-check"></i><span>Keep local Brampton and GTA context throughout the article.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container section-grid">
+      <article class="policy-card policy-copy">
+        {{ content | safe }}
+      </article>
+      <aside class="info-panel">
+        <h3>Suggested internal links</h3>
+        <ul class="feature-list" role="list">
+          <li><i class="fa-solid fa-arrow-right"></i><span>Relevant service page</span></li>
+          <li><i class="fa-solid fa-arrow-right"></i><span>Contact page or consultation CTA</span></li>
+          <li><i class="fa-solid fa-arrow-right"></i><span>Another educational post when available</span></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+</main>

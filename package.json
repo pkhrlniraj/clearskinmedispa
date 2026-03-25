@@ -1,0 +1,13 @@
+{
+  "name": "clear-skin-medi-spa-static",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static Eleventy site for Clear Skin Medi Spa",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve --incremental"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
