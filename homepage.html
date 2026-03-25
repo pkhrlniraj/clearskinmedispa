@@ -335,49 +335,49 @@
        HERO SECTION
     ======================================== */
     #hero {
-      padding: 96px 0 30px;
-      background:
-        linear-gradient(180deg, #fff 0%, var(--bg-cream) 100%);
+      padding: 76px 0 30px;
+      background: #fff;
     }
-    .hero-shell {
+    .hero-stage {
       position: relative;
-      min-height: clamp(520px, 68vh, 640px);
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
       overflow: hidden;
-      border-radius: 34px;
       background: #efa2c3;
-      box-shadow: 0 28px 70px rgba(26,22,18,0.14);
-      border: 1px solid rgba(255,255,255,0.55);
     }
-    .hero-shell::before {
+    .hero-stage::before {
       content: "";
       position: absolute;
       inset: 0;
       z-index: 1;
       background:
-        linear-gradient(90deg, rgba(26,22,18,0.72) 0%, rgba(26,22,18,0.58) 24%, rgba(26,22,18,0.24) 46%, rgba(26,22,18,0) 62%);
+        linear-gradient(90deg, rgba(34,22,20,0.62) 0%, rgba(34,22,20,0.54) 18%, rgba(34,22,20,0.28) 32%, rgba(34,22,20,0.08) 44%, rgba(34,22,20,0) 56%);
       pointer-events: none;
     }
     .hero-media {
-      position: absolute;
-      inset: 0;
+      position: relative;
+      z-index: 0;
     }
     .hero-media img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 66% center;
+      height: auto;
       display: block;
     }
     .hero-content {
-      position: relative;
+      position: absolute;
+      inset: 0;
       z-index: 2;
-      min-height: inherit;
+      pointer-events: none;
+    }
+    .hero-content .container {
+      height: 100%;
       display: flex;
       align-items: center;
-      padding: clamp(38px, 5vw, 72px);
     }
     .hero-copy {
-      max-width: 500px;
+      max-width: clamp(340px, 29vw, 480px);
+      padding: clamp(36px, 4vw, 60px) 0;
+      pointer-events: auto;
     }
     .hero-badge {
       display: inline-flex;
@@ -397,7 +397,7 @@
     .hero-badge i { font-size: 10px; }
     .hero-title {
       font-family: var(--font-head);
-      font-size: clamp(36px, 4.8vw, 58px);
+      font-size: clamp(36px, 4.1vw, 60px);
       font-weight: 700;
       color: #fff;
       line-height: 1.08;
@@ -409,7 +409,7 @@
       color: rgba(255,255,255,0.82);
       line-height: 1.75;
       margin-bottom: 30px;
-      max-width: 470px;
+      max-width: 460px;
     }
     .hero-buttons {
       display: flex;
@@ -505,30 +505,24 @@
       #hero {
         padding: 86px 0 24px;
       }
-      .hero-shell {
-        min-height: 0;
-        border-radius: 26px;
-      }
-      .hero-shell::before {
+      .hero-stage::before {
         display: none;
       }
       .hero-media {
-        position: relative;
-        height: min(50vw, 320px);
-      }
-      .hero-media img {
-        position: static;
-        object-position: 68% center;
+        width: 100%;
       }
       .hero-content {
-        min-height: 0;
-        padding: 0;
+        position: static;
+        pointer-events: auto;
+        background: #fff;
+      }
+      .hero-content .container {
         display: block;
+        height: auto;
       }
       .hero-copy {
         max-width: none;
-        padding: 28px 24px 30px;
-        background: #fff;
+        padding: 28px 0 30px;
       }
       .hero-badge {
         background: var(--gold-pale);
@@ -1725,17 +1719,17 @@
 ============================================== -->
 <main>
 <section id="hero" aria-label="Hero banner">
-  <div class="container">
-    <div class="hero-shell">
-      <div class="hero-media">
-        <img src="/assets/media/soprano-ice-cover-hero.png"
-             alt="Smiling woman representing Clear Skin Medi Spa laser hair removal and advanced skin treatments"
-             width="2560" height="974"
-             loading="eager"
-             fetchpriority="high"
-             decoding="async">
-      </div>
-      <div class="hero-content">
+  <div class="hero-stage">
+    <div class="hero-media">
+      <img src="/assets/media/soprano-ice-cover-hero.png"
+           alt="Smiling woman representing Clear Skin Medi Spa laser hair removal and advanced skin treatments"
+           width="2560" height="974"
+           loading="eager"
+           fetchpriority="high"
+           decoding="async">
+    </div>
+    <div class="hero-content">
+      <div class="container">
         <div class="hero-copy">
           <div class="hero-badge">
             <i class="fa-solid fa-location-dot"></i>
@@ -1759,6 +1753,8 @@
         </div>
       </div>
     </div>
+  </div>
+  <div class="container">
     <div class="hero-metrics" aria-label="Quick facts">
       <div class="hero-metric">
         <span class="hero-metric-value">4.9</span>
