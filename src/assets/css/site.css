@@ -2,18 +2,25 @@ body {
   overflow-x: hidden;
 }
 
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
 .nav-logo img {
+  height: 58px;
   width: auto;
-  max-width: 240px;
-  max-height: 50px;
+  max-width: 300px;
+  max-height: none;
+  filter: brightness(0.72) saturate(1.08) contrast(1.04) drop-shadow(0 0.5px 0 rgba(102, 73, 21, 0.32));
 }
 
 .footer-brand img {
+  height: 56px;
   width: auto;
-  max-width: 240px;
-  height: auto;
-  max-height: 52px;
-  filter: none;
+  max-width: 280px;
+  max-height: none;
+  filter: brightness(1.04) saturate(1.04);
   opacity: 1;
 }
 
@@ -779,8 +786,8 @@ body {
   }
 
   .nav-logo img {
-    max-width: 200px;
-    max-height: 42px;
+    height: 50px;
+    max-width: 240px;
   }
 
   .page-hero {
@@ -846,6 +853,8 @@ body {
   }
 
   .footer-brand img {
+    height: 50px;
+    max-width: 240px;
     margin-left: auto;
     margin-right: auto;
   }
