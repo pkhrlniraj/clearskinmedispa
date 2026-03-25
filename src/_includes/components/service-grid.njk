@@ -9,11 +9,14 @@
 
     <div class="services-grid{% if serviceGridClass %} {{ serviceGridClass }}{% endif %}">
       {% for service in gridCards %}
+      {% set cardImported = serviceContent[service.slug] or {} %}
+      {% set serviceCardImage = cardImported.primaryImage or service.image %}
+      {% set serviceCardImageAlt = cardImported.primaryImageAlt or service.imageAlt %}
       <article class="service-card">
         <div class="service-card-img-wrap">
           <img class="service-card-img"
-               src="{{ service.image }}"
-               alt="{{ service.imageAlt }}"
+               src="{{ serviceCardImage }}"
+               alt="{{ serviceCardImageAlt }}"
                loading="lazy"
                width="400"
                height="300">

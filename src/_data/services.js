@@ -123,97 +123,116 @@ module.exports = [
     metaTitle: "OxyGeneo Facial Brampton | #1 Anti-Aging Facial | Clear Skin",
     metaDescription:
       "Experience the OxyGeneo 3-in-1 super facial in Brampton. Exfoliate, infuse & oxygenate for younger-looking skin. Starting at $199. Book today!",
-    image:
-      "https://clearskinmedispa.com/New/wp-content/uploads/2023/12/oxygeneo-face-horizontal.jpg",
-    imageAlt: "OxyGeneo anti-aging facial treatment at Clear Skin Medi Spa",
+    image: "/assets/media/live-services/oxygeneo/24-hero-model.webp",
+    imageAlt: "Radiant skin model representing the OxyGeneo facial",
     priceLabel: "From $199",
     priceValue: 199,
     schemaType: "MedicalProcedure",
-    bodyLocation: "Face, Neck, Decollete",
+    bodyLocation: "Face, Neck, Under-Eye, Chest, Back",
     schemaDescription:
-      "OxyGeneo exfoliates, infuses, and oxygenates skin for brighter, plumper, younger-looking skin with no downtime.",
+      "OxyGeneo exfoliates, nourishes, and oxygenates skin while ultrasound, TriPollar RF, and ESA support absorption, tightening, and contouring with no downtime.",
     hero: {
-      eyebrow: "3-in-1 Super Facial",
-      title: "OxyGeneo Facial in Brampton for Plump, Glowing Skin",
+      eyebrow: "Canada's #1 Super Facial",
+      title: "OxyGeneo Facial in Brampton for Glow, Tightening & Lift",
       summary:
-        "OxyGeneo combines exfoliation, nutrient infusion, and oxygenation in one luxurious treatment. It is ideal for clients who want visible radiance, hydration, and anti-aging support without downtime.",
+        "OxyGeneo pairs exfoliation, oxygenation, and nourishment with ultrasound, TriPollar RF, and ESA support for clients who want radiance, absorption, skin tightening, and contouring without downtime.",
       highlights: [
-        "Popular for glow, hydration, and anti-aging",
-        "No downtime and makeup-friendly after treatment",
-        "Excellent monthly maintenance facial"
+        "3-in-1 facial upgraded with ultrasound, RF, and ESA",
+        "No downtime and event-friendly before special occasions",
+        "Suitable for multiple skin types, concerns, and seasons"
       ]
     },
     intro: [
-      "The OxyGeneo has earned a reputation as one of Canada's most sought-after facial treatments because it delivers visible results from the very first appointment.",
-      "Unlike traditional facials that stay mostly on the surface, OxyGeneo stimulates natural oxygenation from within and helps active ingredients absorb more effectively."
+      "The OxyGeneo Super Facial is designed for clients who want more than a basic glow treatment. Its core technology exfoliates, oxygenates, and nourishes the skin while add-on technologies support tightening, contouring, and deeper absorption.",
+      "That makes it a strong option when you want visible radiance, smoother texture, anti-aging support, or an event-ready finish without taking downtime afterward."
     ],
     benefitsTitle: "What Makes OxyGeneo Different",
     benefits: [
-      "Exfoliates dull surface cells to reveal fresher, smoother skin.",
-      "Infuses skin with ingredients like hyaluronic acid, peptides, and retinol.",
-      "Supports oxygen-rich circulation for a brighter, healthier-looking complexion.",
-      "Helps soften the look of fine lines and tired skin.",
-      "Leaves skin feeling plumper, softer, and deeply refreshed.",
-      "Works well before events because there is no required downtime."
+      "Combines exfoliation, oxygenation, and nourishment in one treatment.",
+      "Can be upgraded with ultrasound, TriPollar RF, and ESA support.",
+      "Improves glow, texture, and ingredient absorption without downtime.",
+      "Supports collagen, elasticity, and a more refreshed appearance.",
+      "Can be tailored to acne-prone, dry, sensitive, mature, or uneven skin.",
+      "Works well before events because there is no required recovery window."
     ],
     idealForTitle: "Who It Is Best For",
     idealFor: [
-      "Clients focused on anti-aging and skin rejuvenation",
-      "Dry, dehydrated, or tired-looking skin",
-      "Fine lines, textural dullness, and loss of glow",
-      "Anyone wanting a high-impact facial without recovery time"
+      "Clients who want visible glow with no downtime",
+      "Fine lines, dullness, dehydration, or early loss of firmness",
+      "Sensitive, oily, combination, or condition-based skin when matched to the right OxyPod",
+      "Anyone wanting a premium facial before events, photos, or special occasions"
     ],
     processTitle: "The OxyGeneo Experience",
     process: [
       {
         title: "Exfoliate",
         text:
-          "The treatment removes dead surface cells so your skin looks smoother and can receive active ingredients more effectively."
-      },
-      {
-        title: "Infuse",
-        text:
-          "Customized actives are delivered into the freshly exfoliated skin to support hydration, firmness, and clarity."
+          "Dead skin, buildup, and surface impurities are cleared away so the skin is smoother and better prepared for treatment."
       },
       {
         title: "Oxygenate",
         text:
-          "The Bohr Effect encourages oxygen-rich blood flow to the area, helping the skin appear more energized and radiant."
+          "The Bohr Effect helps encourage oxygen-rich blood flow so the skin looks more energized and refreshed."
+      },
+      {
+        title: "Nourish & Tighten",
+        text:
+          "Targeted actives are delivered while ultrasound, RF, and ESA can be used to support absorption, tightening, and contouring."
       }
     ],
     quickFacts: [
-      "Best for: glow, hydration, anti-aging support",
-      "Series: every 3-4 weeks",
+      "Best for: glow, hydration, tightening, and anti-aging support",
+      "Treatment time: about 35-45 minutes",
       "Downtime: none",
-      "Pairs well with HydraFacial alternation"
+      "Good fit for: multiple skin types and concerns"
     ],
     faq: [
       {
-        question: "How often should I get an OxyGeneo facial?",
+        question: "How long will the results last?",
         answer:
-          "Most clients do best with treatments every 3-4 weeks. A series of 4-6 treatments can provide stronger anti-aging and rejuvenation benefits."
+          "Results vary by person and lifestyle, but the effect is cumulative, so a series of treatments typically brings longer-lasting improvement."
       },
       {
-        question: "Is there downtime after OxyGeneo?",
+        question: "How does the OxyGeneo treatment feel?",
         answer:
-          "No. You can return to your day immediately after treatment, and many clients notice an instant glow."
+          "Most clients describe it as a warm, comfortable facial massage. The exfoliation feels refreshing, and because there is no aggressive vacuum action, the treatment is generally soothing."
       },
       {
-        question: "How does OxyGeneo compare to HydraFacial?",
+        question: "How long is the OxyGeneo treatment?",
         answer:
-          "Both are excellent no-downtime facials. OxyGeneo leans more into oxygenation and anti-aging, while HydraFacial is especially strong for deep cleansing, extraction, and hydration."
+          "A basic OxyGeneo session typically takes about 35-45 minutes. If it is combined with additional modalities, the overall appointment can take longer."
       },
       {
-        question: "Who is a good candidate for OxyGeneo?",
+        question: "Is there downtime after OxyGeneo treatments?",
         answer:
-          "It is suitable for most skin types and especially useful for clients dealing with dullness, dehydration, early aging concerns, and loss of radiance."
+          "No. OxyGeneo is designed as a zero-downtime treatment, which is part of why it is popular before events."
+      },
+      {
+        question: "How soon after treatment will I see results?",
+        answer:
+          "Many clients notice visible texture and glow improvement right after the first treatment, with stronger cumulative results over a series."
+      },
+      {
+        question: "Is OxyGeneo safe if I have allergies or sensitive skin?",
+        answer:
+          "The formulas are designed with sensitivities in mind, but you should always share known allergies before treatment so the facial can be matched to the right pod and settings."
+      },
+      {
+        question: "Is OxyGeneo safe for all skin types?",
+        answer:
+          "Yes. The partner source describes OxyGeneo as safe across skin types, and the treatment can be customized around specific concerns."
+      },
+      {
+        question: "How do I know which OxyGeneo treatment is best for me?",
+        answer:
+          "During your visit, your skin is assessed and matched to the OxyGeneo treatment and OxyPod that best fit your current concerns and goals."
       }
     ],
-    relatedServices: ["hydrafacial", "facials", "microneedling"],
+    relatedServices: ["hydrafacial", "rf-skin-tightening", "facials"],
     cta: {
-      title: "Ready For Your Glow-Up?",
+      title: "Ready For Your OxyGeneo Glow-Up?",
       text:
-        "Book an OxyGeneo facial if you want radiant, plumper skin with zero downtime and a relaxing in-clinic experience."
+        "Book an OxyGeneo facial if you want brighter skin, stronger absorption, and a no-downtime treatment that can also support tightening and contouring."
     }
   },
   {
@@ -1212,6 +1231,102 @@ module.exports = [
       title: "Explore A Non-Surgical Lift",
       text:
         "Book a consultation if you want to tighten and firm skin with a collagen-focused plan that does not rely on surgery or lengthy downtime."
+    }
+  },
+  {
+    slug: "other-services",
+    name: "Threading & Makeup",
+    navLabel: "Other Services",
+    metaTitle: "Threading & Makeup Services Brampton | Clear Skin Medi Spa",
+    metaDescription:
+      "Book threading and makeup services in Brampton for precise brow shaping, facial hair removal, and polished event-ready looks.",
+    image:
+      "https://clearskinmedispa.com/wp-content/uploads/2023/12/23.png",
+    imageAlt:
+      "Threading and beauty services at Clear Skin Medi Spa",
+    priceLabel: "From $6",
+    priceValue: 6,
+    schemaType: "Service",
+    bodyLocation: "Eyebrows, Face",
+    schemaDescription:
+      "Threading and makeup services for precise brow shaping, facial hair removal, and special-occasion beauty preparation.",
+    hero: {
+      eyebrow: "Brows & Beauty Services",
+      title: "Threading & Makeup Services in Brampton",
+      summary:
+        "Visit Clear Skin Medi Spa for precise threading, polished brow shaping, and makeup services designed for everyday confidence or special occasions.",
+      highlights: [
+        "Precise brow shaping with gentle facial hair removal",
+        "Lower-irritation option for sensitive skin",
+        "Natural, glam, and special-occasion makeup available"
+      ]
+    },
+    intro: [
+      "These beauty services round out the treatment menu with fast, practical appointments that help clients look polished between larger skin and laser sessions.",
+      "Threading is ideal for brows and facial detailing, while our makeup services support events, celebrations, photoshoots, and confidence-boosting touch-ups."
+    ],
+    benefitsTitle: "Why Clients Book These Services",
+    benefits: [
+      "Threading gives cleaner, more precise brow definition than many alternatives.",
+      "No wax or harsh chemicals, which can be helpful for sensitive skin.",
+      "Great add-on appointment before events or photos.",
+      "Makeup services can be tailored from soft natural looks to full glam.",
+      "Easy maintenance service that pairs well with facials and brow appointments.",
+      "Fast, approachable appointments for routine upkeep."
+    ],
+    idealForTitle: "Best Fit For",
+    idealFor: [
+      "Eyebrow clean-up, shaping, and facial hair detailing",
+      "Clients who want a low-chemical hair removal option",
+      "Anyone getting ready for an event or celebration",
+      "Beauty maintenance visits between larger treatment plans"
+    ],
+    processTitle: "What To Expect",
+    process: [
+      {
+        title: "Shape & Detail",
+        text:
+          "We assess the area, define a flattering shape, and remove unwanted hair with precision-focused threading."
+      },
+      {
+        title: "Refine The Look",
+        text:
+          "For makeup bookings, we tailor coverage, finish, and color direction to the occasion and your preferences."
+      },
+      {
+        title: "Leave Ready",
+        text:
+          "Appointments are designed to be efficient, polished, and easy to fit around your schedule."
+      }
+    ],
+    quickFacts: [
+      "Best for: brow shaping, facial detailing, event prep",
+      "Starting price: from $6 for threading",
+      "Downtime: none",
+      "Pairs well with: facials, waxing, and brow services"
+    ],
+    faq: [
+      {
+        question: "Is threading better than waxing for brows?",
+        answer:
+          "Threading is often preferred when you want very precise brow shaping or a hair removal method without wax or added chemicals."
+      },
+      {
+        question: "How long do threading results last?",
+        answer:
+          "Results often last a few weeks depending on your natural growth cycle, similar to other root-based facial hair removal methods."
+      },
+      {
+        question: "What makeup looks can I book?",
+        answer:
+          "We offer polished natural looks, glam finishes, and special-occasion makeup based on the event and your preferred style."
+      }
+    ],
+    relatedServices: ["waxing", "microblading", "facials"],
+    cta: {
+      title: "Book Your Brow Or Beauty Appointment",
+      text:
+        "Choose threading or makeup when you want a polished look, precise detailing, and a simple appointment that fits into your routine."
     }
   }
 ];

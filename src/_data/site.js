@@ -115,7 +115,7 @@ const site = {
       "https://clearskinmedispa.com/New/wp-content/uploads/2024/02/Patrick-Brown-with-Ama-Soprano-Ice-Lase-Treatment-Machine-scaled.jpg"
   },
   ogImage:
-    "https://clearskinmedispa.com/New/wp-content/uploads/2023/11/Soprano-Ice-Cover-Photo-scaled.jpg",
+    "https://clearskinmedispa.com/assets/media/soprano-ice-cover-hero.png",
   homepage: {
     css: homepageCss,
     script: "(function () {" + homepageScript,

@@ -1,4 +1,7 @@
 {% set relatedCards = services | bySlugs(service.relatedServices) %}
+{% set imported = serviceContent[service.slug] or {} %}
+{% set heroImage = imported.primaryImage or service.image %}
+{% set heroImageAlt = imported.primaryImageAlt or service.imageAlt %}
 <main class="page-shell">
   {% include "components/breadcrumbs.njk" %}
 
@@ -27,7 +30,7 @@
 
       <div class="hero-side-stack">
         <div class="page-image-frame">
-          <img src="{{ service.image }}" alt="{{ service.imageAlt }}">
+          <img src="{{ heroImage }}" alt="{{ heroImageAlt }}">
           <span class="page-image-caption"><i class="fa-solid fa-location-dot"></i>Brampton, ON</span>
         </div>
         <div class="hero-side-card">
@@ -54,14 +57,20 @@
       <div class="section-copy">
         <span class="section-label">Treatment Overview</span>
         <h2 class="section-title">{{ service.name }} designed around your goals</h2>
+        {% if imported.overview and imported.overview.paragraphs and imported.overview.paragraphs.length %}
+        {% for paragraph in imported.overview.paragraphs %}
+        <p>{{ paragraph }}</p>
+        {% endfor %}
+        {% else %}
         {% for paragraph in service.intro %}
         <p>{{ paragraph }}</p>
         {% endfor %}
+        {% endif %}
       </div>
       <div class="info-panel">
-        <h3>{{ service.benefitsTitle }}</h3>
+        <h3>{{ service.idealForTitle }}</h3>
         <ul class="feature-list" role="list">
-          {% for item in service.benefits %}
+          {% for item in service.idealFor %}
           <li><i class="fa-solid fa-check"></i><span>{{ item }}</span></li>
           {% endfor %}
         </ul>
@@ -72,9 +81,9 @@
   <section class="page-section page-section--muted">
     <div class="container section-grid section-grid--equal">
       <div class="info-panel">
-        <h3>{{ service.idealForTitle }}</h3>
+        <h3>{{ service.benefitsTitle }}</h3>
         <ul class="feature-list" role="list">
-          {% for item in service.idealFor %}
+          {% for item in service.benefits %}
           <li><i class="fa-solid fa-star"></i><span>{{ item }}</span></li>
           {% endfor %}
         </ul>
@@ -92,6 +101,86 @@
       </div>
     </div>
   </section>
+
+  {% if imported.contentSections and imported.contentSections.length %}
+  <section class="page-section">
+    <div class="container">
+      <div class="section-header section-header--left">
+        <span class="section-label">Treatment Details</span>
+        <h2 class="section-title">Detailed treatment information for {{ service.name }}</h2>
+        <p class="section-subtitle">Key treatment details, benefits, and care guidance organized into a cleaner service-page experience.</p>
+      </div>
+
+      <div class="detail-section-stack">
+        {% for section in imported.contentSections %}
+        <div class="detail-section{% if loop.index % 2 == 0 %} detail-section--reverse{% endif %}">
+          <div class="detail-section-copy">
+            <span class="section-label">{{ service.name }}</span>
+            <h3 class="detail-section-title">{{ section.title }}</h3>
+            {% for paragraph in section.paragraphs %}
+            <p>{{ paragraph }}</p>
+            {% endfor %}
+
+            {% if section.list and section.list.length %}
+            <ul class="feature-list" role="list">
+              {% for item in section.list %}
+              <li><i class="fa-solid fa-check"></i><span>{{ item }}</span></li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+
+            {% if section.subsections and section.subsections.length %}
+            <div class="subsection-card-grid">
+              {% for subsection in section.subsections %}
+              <div class="subsection-card">
+                <h4>{{ subsection.title }}</h4>
+                {% for paragraph in subsection.paragraphs %}
+                <p>{{ paragraph }}</p>
+                {% endfor %}
+                {% if subsection.list and subsection.list.length %}
+                <ul class="feature-list" role="list">
+                  {% for item in subsection.list %}
+                  <li><i class="fa-solid fa-check"></i><span>{{ item }}</span></li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </div>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+
+          {% if section.image %}
+          <div class="page-image-frame page-image-frame--detail">
+            <img src="{{ section.image }}" alt="{{ section.imageAlt or section.title }}">
+          </div>
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if imported.galleryImages and imported.galleryImages.length %}
+  <section class="page-section page-section--muted">
+    <div class="container">
+      <div class="section-header section-header--left">
+        <span class="section-label">{{ imported.galleryTitle or "Treatment Gallery" }}</span>
+        <h2 class="section-title">{{ service.name }} visuals & results</h2>
+        <p class="section-subtitle">Supporting imagery pulled from the live page and kept local for the rebuilt site.</p>
+      </div>
+
+      <div class="service-gallery-grid">
+        {% for image in imported.galleryImages %}
+        <figure class="service-gallery-item">
+          <img src="{{ image.src }}" alt="{{ image.alt or service.name }}">
+        </figure>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
 
   {% set cards = relatedCards %}
   {% set serviceSectionLabel = "Related Services" %}

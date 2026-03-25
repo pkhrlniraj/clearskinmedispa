@@ -24,7 +24,13 @@ module.exports = {
       return "/" + data.service.slug + "/";
     },
     ogImage: function (data) {
-      return data.service.image;
+      if (!data.service) {
+        return data.site.ogImage;
+      }
+      const imported = data.serviceContent[data.service.slug];
+      return imported && imported.primaryImage
+        ? data.site.url + imported.primaryImage
+        : data.service.image;
     },
     pageClass: function (data) {
       return "page-service page-" + data.service.slug;
@@ -37,14 +43,23 @@ module.exports = {
       ];
     },
     schemaBlocks: function (data) {
+      if (!data.service || !data.service.hero) {
+        return [];
+      }
+      const imported = data.serviceContent[data.service.slug];
       const breadcrumbs = [
         { label: "Home", url: "/" },
         { label: "Services", url: "/#services" },
         { label: data.service.name, url: "/" + data.service.slug + "/" }
       ];
+      const serviceSchema = helpers.buildServiceSchema(data.service, data.site);
+
+      if (imported && imported.primaryImage) {
+        serviceSchema.image = data.site.url + imported.primaryImage;
+      }
 
       return [
-        helpers.buildServiceSchema(data.service, data.site),
+        serviceSchema,
         helpers.buildFaqSchema(data.service.faq),
         helpers.buildBreadcrumbSchema(data.site.url, breadcrumbs)
       ].filter(Boolean);
