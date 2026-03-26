@@ -525,32 +525,82 @@
       letter-spacing: 0.1em;
       margin-top: 2px;
     }
-    @media (max-width: 1520px), (max-height: 900px) {
+    @media (max-width: 1520px), (max-height: 980px) {
       .hero-content .container {
-        align-items: flex-start;
-        padding-top: clamp(26px, 2.8vw, 48px);
-        padding-bottom: clamp(22px, 2.4vw, 38px);
+        align-items: center;
+        padding-top: clamp(16px, 2vw, 28px);
+        padding-bottom: clamp(16px, 2vw, 28px);
       }
       .hero-copy {
-        max-width: clamp(280px, 24vw, 390px);
+        max-width: clamp(280px, 24vw, 382px);
         padding: 0;
       }
+      .hero-badge {
+        margin-bottom: 16px;
+        padding: 5px 14px;
+        font-size: 10px;
+      }
       .hero-title {
-        font-size: clamp(28px, 3.15vw, 46px);
-        margin-bottom: 14px;
+        font-size: clamp(28px, 3vw, 44px);
+        margin-bottom: 12px;
       }
       .hero-text {
-        max-width: 360px;
+        max-width: 350px;
         font-size: 15px;
-        line-height: 1.65;
-        margin-bottom: 22px;
+        line-height: 1.58;
+        margin-bottom: 18px;
+      }
+      .hero-buttons {
+        gap: 12px;
       }
       .hero-buttons .btn {
-        padding: 13px 22px;
+        padding: 12px 20px;
+        font-size: 12px;
       }
       .hero-assurance {
-        margin-top: 18px;
+        margin-top: 14px;
         padding: 10px 14px;
+      }
+      .hero-assurance-icon {
+        width: 30px;
+        height: 30px;
+      }
+      .hero-assurance-title {
+        font-size: 12px;
+      }
+      .hero-assurance-label {
+        font-size: 10px;
+      }
+    }
+    @media (max-height: 860px) and (min-width: 901px) {
+      .hero-copy {
+        max-width: 350px;
+      }
+      .hero-badge {
+        margin-bottom: 14px;
+      }
+      .hero-title {
+        font-size: clamp(26px, 2.7vw, 40px);
+        margin-bottom: 10px;
+      }
+      .hero-text {
+        max-width: 336px;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 16px;
+      }
+      .hero-buttons {
+        gap: 10px;
+      }
+      .hero-assurance {
+        margin-top: 12px;
+        padding: 8px 12px;
+      }
+      .hero-assurance-title {
+        font-size: 11px;
+      }
+      .hero-assurance-label {
+        font-size: 9px;
       }
     }
     @media (max-width: 900px) {
