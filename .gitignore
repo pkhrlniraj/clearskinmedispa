@@ -10,3 +10,10 @@ clear-skin-logo-new.jpg
 RESTORE-GUIDE.md
 work/
 tmp-*.png
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
