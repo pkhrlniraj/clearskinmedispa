@@ -36,3 +36,5 @@
   - this prevents the top badge and bottom reassurance chip from clipping on shorter desktop and laptop viewports
   - a later follow-up issue turned out to be stale browser caching of `/assets/css/homepage-base.css` and `/assets/js/homepage-base.js`
   - fix: version the homepage/static asset URLs in `base.njk` via `site.assetVersion` so refreshed builds force the browser to fetch the current CSS/JS
+  - on 2026-03-27, a true local repro was found around an effective `1440x700` desktop viewport
+  - final structural fix: change the short-desktop hero from a hard `height` to a content-safe `min-height` so the panel can grow slightly instead of clipping the reassurance chip

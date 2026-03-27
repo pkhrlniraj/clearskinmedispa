@@ -607,8 +607,8 @@
       .hero-stage {
         display: grid;
         grid-template-columns: minmax(380px, 34vw) minmax(0, 1fr);
-        grid-template-rows: 1fr;
-        height: clamp(620px, calc(100vh - 102px), 780px);
+        min-height: clamp(620px, calc(100vh - 102px), 780px);
+        align-items: stretch;
         background: linear-gradient(135deg, #74495b 0%, #9d5f78 30%, #efa2c3 100%);
       }
       .hero-stage::before {
@@ -634,7 +634,6 @@
         inset: auto;
         grid-column: 1;
         grid-row: 1;
-        height: 100%;
         background: linear-gradient(180deg, rgba(80, 46, 60, 0.92), rgba(98, 58, 76, 0.86));
         border-right: 1px solid rgba(255,255,255,0.08);
       }
@@ -646,7 +645,7 @@
       }
       .hero-copy {
         max-width: none;
-        min-height: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
