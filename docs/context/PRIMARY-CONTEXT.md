@@ -23,6 +23,9 @@ This is the main handoff file to read first after context compaction.
   - Deploy command: `npx wrangler deploy`
   - Output directory: `_site`
 - That means the remaining homepage issue is a real unresolved responsive bug at the user's actual desktop viewport, not just stale deployment state
+- On 2026-03-27, another key finding was added:
+  - even when HTML is refreshed, the browser may continue using stale homepage CSS/JS because the asset URLs were static
+  - asset versioning was added in `src/_data/site.js` and `src/_includes/layouts/base.njk` to force fresh CSS/JS on new builds
 - Netlify-specific config has been removed from the repo
 - Playwright-based local QA is now installed but still local-only in the working tree
 - There are currently no tracked Cloudflare-specific config files in the repo, so production behavior must be verified against the Cloudflare dashboard/build settings directly

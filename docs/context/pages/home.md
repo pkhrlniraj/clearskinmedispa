@@ -34,3 +34,5 @@
   - the root cause was the desktop-short hero fallback switching too late and using a split layout without a stable fixed hero height
   - the fix was to move short desktop screens to a deliberate left-panel/right-image composition with an explicit hero height and full-height image fill
   - this prevents the top badge and bottom reassurance chip from clipping on shorter desktop and laptop viewports
+  - a later follow-up issue turned out to be stale browser caching of `/assets/css/homepage-base.css` and `/assets/js/homepage-base.js`
+  - fix: version the homepage/static asset URLs in `base.njk` via `site.assetVersion` so refreshed builds force the browser to fetch the current CSS/JS

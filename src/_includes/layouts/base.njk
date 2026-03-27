@@ -18,16 +18,16 @@
   <meta property="og:type" content="{{ resolvedOgType }}">
   <meta property="og:url" content="{{ resolvedCanonical }}">
   <meta property="og:image" content="{{ resolvedOgImage }}">
-  <link rel="icon" type="image/x-icon" href="/assets/media/favicon.ico">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/media/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/media/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/media/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/assets/media/favicon.ico?v={{ site.assetVersion }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/media/favicon-32x32.png?v={{ site.assetVersion }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/media/favicon-16x16.png?v={{ site.assetVersion }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/media/apple-touch-icon.png?v={{ site.assetVersion }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="/assets/css/homepage-base.css">
-  <link rel="stylesheet" href="/assets/css/site.css">
+  <link rel="stylesheet" href="/assets/css/homepage-base.css?v={{ site.assetVersion }}">
+  <link rel="stylesheet" href="/assets/css/site.css?v={{ site.assetVersion }}">
 </head>
 <body class="{{ pageClass or '' }}">
   {% include "components/header.njk" %}
@@ -47,6 +47,6 @@
   <script type="application/ld+json">{{ block | json | safe }}</script>
   {% endfor %}
 
-  <script src="/assets/js/homepage-base.js"></script>
+  <script src="/assets/js/homepage-base.js?v={{ site.assetVersion }}"></script>
 </body>
 </html>

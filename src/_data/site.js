@@ -6,6 +6,20 @@ const neighbourhoods = require("./neighbourhoods");
 
 const homepagePath = path.join(process.cwd(), "homepage.html");
 const homepageSource = fs.readFileSync(homepagePath, "utf8");
+const assetVersionSources = [
+  homepagePath,
+  path.join(process.cwd(), "src", "_includes", "layouts", "base.njk"),
+  path.join(process.cwd(), "src", "assets", "css", "site.css")
+];
+
+const assetVersion = String(
+  Math.max.apply(
+    null,
+    assetVersionSources.map(function (filePath) {
+      return Math.floor(fs.statSync(filePath).mtimeMs);
+    })
+  )
+);
 
 function extract(pattern, fallback) {
   const match = homepageSource.match(pattern);
@@ -104,6 +118,7 @@ const site = {
     dark: "/assets/media/clear-skin-logo.png",
     absolute: "https://clearskinmedispa.com/assets/media/clear-skin-logo.png"
   },
+  assetVersion,
   images: {
     aboutHero:
       "https://clearskinmedispa.com/New/wp-content/uploads/2024/02/7G0A5211-scaled.jpg",
