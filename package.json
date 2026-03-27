@@ -6,10 +6,13 @@
   "scripts": {
     "build": "eleventy",
     "dev": "eleventy --serve --incremental",
-    "qa:homepage": "node scripts/qa-homepage.mjs"
+    "qa:homepage": "node scripts/qa-homepage.mjs",
+    "deploy": "npm run build && wrangler deploy",
+    "preview": "npm run build && wrangler dev"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "playwright": "^1.58.2"
+    "playwright": "^1.58.2",
+    "wrangler": "^4.77.0"
   }
 }
