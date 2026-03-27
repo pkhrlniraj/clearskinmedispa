@@ -23,5 +23,14 @@
 - Homepage remains the visual baseline for the rest of the site
 
 ## Current Open Note
-- The newest responsive fixes for the homepage are local-only and not pushed yet
-
+- A major later learning was added after repeated hero debugging:
+  - the homepage can look correct locally while still failing at the user's actual viewport
+  - use `npm run qa:homepage` before future pushes
+  - Cloudflare production/build settings were later verified and were correct:
+    - branch `main`
+    - build command `npm run build`
+    - output directory `_site`
+    - deploy command `npx wrangler deploy`
+  - the root cause was the desktop-short hero fallback switching too late and using a split layout without a stable fixed hero height
+  - the fix was to move short desktop screens to a deliberate left-panel/right-image composition with an explicit hero height and full-height image fill
+  - this prevents the top badge and bottom reassurance chip from clipping on shorter desktop and laptop viewports

@@ -12,12 +12,20 @@ This is the main handoff file to read first after context compaction.
 - Build output: `_site`
 
 ## Current State
-- GitHub `main` is currently synced through commit `8945ded`
+- GitHub `main` was later pushed beyond the commits originally summarized in this file
+- Responsive and hero-fix commits after the first context draft include:
+  - `761d8ae` Improve responsiveness and add project context docs
+  - `e088c40` Tighten homepage hero for shorter desktop viewports
+  - `adabae1` Adapt homepage hero for short desktop screens
+- A key later finding: the homepage hero was validated locally after these changes, but Cloudflare production initially appeared stale
+- On 2026-03-26, Cloudflare build logs/settings confirmed production was in fact deploying commit `adabae1` from `main` with:
+  - Build command: `npm run build`
+  - Deploy command: `npx wrangler deploy`
+  - Output directory: `_site`
+- That means the remaining homepage issue is a real unresolved responsive bug at the user's actual desktop viewport, not just stale deployment state
 - Netlify-specific config has been removed from the repo
-- Latest local-only work is a responsiveness/mobile-friendliness pass and is not pushed yet
-- Current unpushed files:
-  - `homepage.html`
-  - `src/assets/css/site.css`
+- Playwright-based local QA is now installed but still local-only in the working tree
+- There are currently no tracked Cloudflare-specific config files in the repo, so production behavior must be verified against the Cloudflare dashboard/build settings directly
 
 ## Source Of Truth
 - Homepage source of truth: `homepage.html`
@@ -104,17 +112,25 @@ This is the main handoff file to read first after context compaction.
 - `netlify.toml` was deleted
 - A repo sync was pushed to GitHub with Netlify legacy removed
 
-### 10. Current Work In Progress: Responsive Pass
+### 10. Responsive Pass And Hero Debugging
 - After Cloudflare deployment, the user reported that the site was not fully responsive and content was being cut off
-- A new local-only responsive pass was started
-- Current local changes:
-  - safer internal-page grid collapsing
-  - earlier header collapse to hamburger
-  - better mobile button stacking and text wrapping
-  - homepage hero overflow fix by removing the `100vw` full-bleed hack
-  - trust bar collapse improvements
-  - mobile spacing/image-height adjustments
-- This work is built locally and not pushed yet
+- A full responsive pass was implemented and pushed
+- The homepage hero still appeared broken in production at a specific desktop viewport, so several hero-specific fixes were attempted
+- The critical later learning:
+  - local browser QA at the failing viewport showed the latest hero code rendering correctly
+  - production screenshots still showed the older broken behavior
+  - therefore the issue became a Cloudflare deployment/activation mismatch, not just a still-broken local frontend
+
+### 11. Local QA Workflow Was Added After This Failure
+- Playwright was installed as a dev dependency for repeatable local visual QA
+- A reusable homepage QA script was added:
+  - `npm run qa:homepage`
+- That script serves the built `_site` output locally, captures screenshots at multiple breakpoints, and writes them to `work/qa/`
+- Important process learning:
+  - do not push additional responsive or hero tweaks without first running the local QA script and checking the screenshots
+  - if local screenshots pass but production still shows the broken hero, first verify Cloudflare build settings and active commit before assuming cache
+  - in this case, Cloudflare was verified and the real gap was that local QA did not yet match the user's exact failing viewport closely enough
+  - do not ask the user to keep rechecking the same hero fix without a verified local screenshot pass
 
 ## Actual Recent Git History
 - `8945ded` Ignore generated Python cache files
@@ -146,7 +162,9 @@ This is the main handoff file to read first after context compaction.
 - Internal pages mostly use shared Eleventy templates plus data files
 
 ## Open Items
-- Review and push the current responsive/mobile pass if approved
+- Re-run local screenshot QA after any future homepage hero changes
+- Commit the local QA tooling and context updates once ready so the workflow is preserved in Git history
+- Keep using local screenshot QA before future pushes
 - Continue full service-page parity review against all 13 live service URLs if desired
 - Consider moving remaining remote non-service media in `src/_data/site.js` to local assets if complete WordPress independence is required
 - Do a manual breakpoint QA pass after the responsive changes are deployed
@@ -160,7 +178,10 @@ This is the main handoff file to read first after context compaction.
 6. If working on a service page, check both:
    - `src/_data/services.js`
    - `src/_data/serviceContent.js`
+7. Before pushing homepage responsive changes, run:
+   - `npm run build`
+   - `npm run qa:homepage`
+8. If local screenshots look correct but production does not, treat it as a Cloudflare deployment problem first
 
 ## Page Contexts
 - See `docs/context/PAGE-INDEX.md`
-

@@ -603,11 +603,12 @@
         font-size: 9px;
       }
     }
-    @media (max-height: 940px) and (min-width: 901px) {
+    @media (max-height: 1180px) and (min-width: 1200px) {
       .hero-stage {
         display: grid;
-        grid-template-columns: minmax(340px, 33vw) minmax(0, 1fr);
-        min-height: min(640px, calc(100vh - 100px));
+        grid-template-columns: minmax(380px, 34vw) minmax(0, 1fr);
+        grid-template-rows: 1fr;
+        height: clamp(620px, calc(100vh - 102px), 780px);
         background: linear-gradient(135deg, #74495b 0%, #9d5f78 30%, #efa2c3 100%);
       }
       .hero-stage::before {
@@ -615,21 +616,26 @@
       }
       .hero-media {
         grid-column: 2;
+        grid-row: 1;
         height: 100%;
+        min-width: 0;
+        align-self: stretch;
       }
       .hero-media img {
         width: 100%;
         height: 100%;
+        min-height: 100%;
         object-fit: cover;
-        object-position: right center;
+        object-position: 68% center;
         transform: none;
       }
       .hero-content {
         position: relative;
         inset: auto;
         grid-column: 1;
+        grid-row: 1;
         height: 100%;
-        background: linear-gradient(180deg, rgba(80, 46, 60, 0.86), rgba(98, 58, 76, 0.78));
+        background: linear-gradient(180deg, rgba(80, 46, 60, 0.92), rgba(98, 58, 76, 0.86));
         border-right: 1px solid rgba(255,255,255,0.08);
       }
       .hero-content .container {
@@ -644,31 +650,33 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 34px 28px 34px 36px;
+        padding: clamp(30px, 4vh, 42px) clamp(28px, 2.4vw, 42px);
       }
       .hero-badge {
-        margin-bottom: 14px;
+        margin-bottom: 12px;
         align-self: flex-start;
       }
       .hero-title {
-        font-size: clamp(30px, 2.6vw, 42px);
+        max-width: 12ch;
+        font-size: clamp(34px, 3vw, 48px);
         margin-bottom: 12px;
       }
       .hero-text {
-        max-width: none;
+        max-width: 34ch;
         font-size: 15px;
-        line-height: 1.58;
-        margin-bottom: 18px;
+        line-height: 1.6;
+        margin-bottom: 20px;
       }
       .hero-buttons {
-        gap: 10px;
+        gap: 12px;
       }
       .hero-buttons .btn {
         padding: 12px 18px;
       }
       .hero-assurance {
-        margin-top: 14px;
+        margin-top: 18px;
         max-width: 100%;
+        align-self: flex-start;
       }
     }
     @media (max-width: 900px) {
